@@ -1,0 +1,72 @@
+@import '../global';
+.sidebar{
+    &__top{
+        padding:24px 16px;
+        width: 100%;
+        display:flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    &__avatar{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    &__name{
+        @include font();
+        color:$color-black;
+        margin: 16px 0 4px;
+    }
+    &__position{
+        @include font(12px);
+        color: $color-gray;
+    }
+    &__middle{
+        text-align: left;
+        margin: 0 16px;
+    }
+    &__nav{
+        border-bottom:1px solid $color-gray;
+        border-top: 1px solid $color-gray;
+        padding: 35px 16px 27px;
+        .menu{
+            &__link{
+                @include font(14px, 500);
+                color: $color-darkGray;
+                @include flex-center(flex-start);
+                transition: 0.3s;
+                &:hover{
+                    color: $color-gray;
+                }
+            }
+            &__item{
+                margin-bottom: 34px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+            &__icon{
+                margin-right: 8px;
+            }
+        }
+    }
+    &__bottom{
+        display: flex;
+        flex-direction: column;
+        padding:24px 0 0 16px;
+        a{
+            span{
+                @include font(15px, 500);
+                color: $color-darkGray;
+                margin-left: 8px
+            }
+        }
+    }
+    &__support{
+        @include font(13px, 500);
+        color: $color-gray;
+        margin-bottom: 20px;
+     
+    }
+}

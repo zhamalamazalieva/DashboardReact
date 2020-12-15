@@ -1,0 +1,30 @@
+@import '../global';
+.header{
+    background-color: $color-blue;
+    &__row{
+        @include flex-center(space-between);
+        padding: 14px 24px
+
+    }
+}
+.logo{
+    &__link{
+        @include flex-center()
+        span{
+            @include font(20px, 500);
+            color: $color-white;
+            margin-left: 8px;
+        }
+    }
+}
+.nav{
+    &__list{
+        display: flex;
+    }
+    &__item{
+        margin-left: 16px;
+        &:first-child{
+            margin-left: 0;
+        }
+    }
+}

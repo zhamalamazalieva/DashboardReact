@@ -1,0 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "Roboto", sans-serif;
+}
+
+li {
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+}
+img {
+	max-width: 100%;
+}
+.container{
+	max-width: 1870px;
+	margin: 0 auto;
+}
+.row {
+	display: flex;
+}
+.align-center{
+	display: flex;
+	align-items: center;
+}
+.col-2{
+	width: 16.6666%;
+}
+.col-3{
+	width: 25%;
+}
+.col-10{
+	width: 83.34%;
+}
