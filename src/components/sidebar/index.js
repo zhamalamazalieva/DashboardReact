@@ -19,7 +19,6 @@ const Sidebar = () => {
                         <span>Support</span>
                     </a>
             </div>
-            <hr/>
         </div>
     </aside>
     )

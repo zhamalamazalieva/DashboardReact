@@ -2,6 +2,9 @@
 .manage{
     padding:24px;
     background-color:#f2f2f2;
+    &__row{
+        justify-content: space-between;
+    }
     &__btn{
         @include font(14px, 500);
         color:$color-black;
@@ -15,6 +18,7 @@
             margin-right:8px;
         }
     }
+ 
     &__input{
         width:620px;
         min-height:36px;
@@ -24,6 +28,28 @@
         &::placeholder{
             @inclide font(14px);
             color:$color-gray;
+        }
+    }
+    &__search-btn{
+        border: none;
+        outline: none;
+        background-color: $color-white;
+        // width: 20px;
+        height: 36px;
+        padding: 8px 15px;
+    }
+    &__btn-add{
+        border-radius: 4px;
+        background-color: $color-blue;
+        padding: 10px;
+        border: none;
+        outline: none;
+        box-shadow:0 1px 3px 0 rgba(63, 63, 68, 0.5);
+        color: $color-white;
+        @include font(14px, 500);
+        @include flex-center();
+        svg{
+            margin-right: 10px;
         }
     }
 }
