@@ -1,5 +1,6 @@
 @import '../global';
 .sidebar{
+	box-shadow: 0px 0px 0px rgba(63, 63, 68, 0.05), 0px 1px 3px rgba(63, 63, 68, 0.15);
     &__top{
         padding:24px 16px;
         width: 100%;
@@ -67,6 +68,5 @@
         @include font(13px, 500);
         color: $color-gray;
         margin-bottom: 20px;
-     
     }
 }

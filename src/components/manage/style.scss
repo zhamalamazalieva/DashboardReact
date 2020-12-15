@@ -1,0 +1,29 @@
+@import '../global';
+.manage{
+    padding:24px;
+    background-color:#f2f2f2;
+    &__btn{
+        @include font(14px, 500);
+        color:$color-black;
+        padding:10px 16px;
+        box-shadow:0 1px 3px 0 rgba(63, 63, 68, 0.5);
+        border:none;
+        outline:none;
+        background-color:$color-white;
+        margin-right:8px;
+        img{
+            margin-right:8px;
+        }
+    }
+    &__input{
+        width:620px;
+        min-height:36px;
+        border:none;
+        outline:none;
+        padding:10px 15px;
+        &::placeholder{
+            @inclide font(14px);
+            color:$color-gray;
+        }
+    }
+}

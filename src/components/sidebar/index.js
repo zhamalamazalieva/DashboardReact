@@ -15,7 +15,7 @@ const Sidebar = () => {
             <div className='sidebar__bottom'>
                 <span className='sidebar__support'>Support</span>
                     <a href='#' className='align-center'>
-                        <img src={Support} alt='support' />
+                        <img src={Support} alt='support'/>
                         <span>Support</span>
                     </a>
             </div>
