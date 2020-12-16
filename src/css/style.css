@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1870px;
+  margin: 0 auto;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.align-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.col-1 {
+  width: 8.333%;
+}
+
+.col-2 {
+  width: 16.6666%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-10 {
+  width: 83.34%;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.manage {
+  padding: 24px;
+  background-color: #f2f2f2;
+  min-height: 100vh;
+}
+
+.manage__row {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.manage__btn {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  color: #3A3B3F;
+  padding: 10px 16px;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(63, 63, 68, 0.5);
+          box-shadow: 0 1px 3px 0 rgba(63, 63, 68, 0.5);
+  border: none;
+  outline: none;
+  background-color: #FFF;
+  margin-right: 8px;
+}
+
+.manage__btn img {
+  margin-right: 8px;
+}
+
+.manage__input {
+  width: 620px;
+  min-height: 36px;
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+}
+
+.manage__input::-webkit-input-placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  color: #9ea0a5;
+}
+
+.manage__input:-ms-input-placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  color: #9ea0a5;
+}
+
+.manage__input::-ms-input-placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  color: #9ea0a5;
+}
+
+.manage__input::placeholder {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  color: #9ea0a5;
+}
+
+.manage__search-btn {
+  border: none;
+  outline: none;
+  background-color: #FFF;
+  height: 36px;
+  padding: 8px 15px;
+}
+
+.manage__btn-add {
+  border-radius: 4px;
+  background-color: #3F51B5;
+  padding: 10px;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(63, 63, 68, 0.5);
+          box-shadow: 0 1px 3px 0 rgba(63, 63, 68, 0.5);
+  color: #FFF;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.manage__btn-add svg {
+  margin-right: 10px;
+}
+
+.manage .users {
+  width: 100%;
+  margin-top: 30px;
+  background-color: #FFF;
+  border-radius: 4px;
+  border-spacing: 0;
+  -webkit-box-shadow: 0px 1px 0px rgba(20, 20, 44, 0.05), 0px 1px 3px rgba(63, 63, 68, 0.15);
+          box-shadow: 0px 1px 0px rgba(20, 20, 44, 0.05), 0px 1px 3px rgba(63, 63, 68, 0.15);
+}
+
+.manage .users__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 18px 27px;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.manage .users__row::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  background-color: rgba(63, 63, 68, 0.15);
+  width: 100%;
+  height: 2px;
+}
+
+.manage .users__headers {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.05px;
+  text-align: left;
+}
+
+.manage .users__headers:last-child {
+  text-align: right;
+}
+
+.manage .users__name {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.05px;
+  position: relative;
+  margin-left: 40px;
+}
+
+.manage .users__avatar {
+  max-width: 32px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
