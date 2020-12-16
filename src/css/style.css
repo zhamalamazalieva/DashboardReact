@@ -54,6 +54,10 @@ img {
   width: 25%;
 }
 
+.col-4 {
+  width: 33.3333%;
+}
+
 .col-10 {
   width: 83.34%;
 }
@@ -66,6 +70,7 @@ img {
   padding: 24px;
   background-color: #f2f2f2;
   min-height: 100vh;
+  position: relative;
 }
 
 .manage__row {
@@ -230,4 +235,104 @@ img {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+.manage .form {
+  width: 30%;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 2;
+  padding: 60px 25px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  transform: translateX(-50%);
+  background-color: #FFF;
+  -webkit-box-shadow: 0 1px 3px 0 black;
+          box-shadow: 0 1px 3px 0 black;
+}
+
+.manage .form label {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.manage .form__text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  position: absolute;
+  top: -25%;
+  left: 10px;
+  background-color: #FFF;
+  padding: 2px 4px;
+  color: #9ea0a5;
+}
+
+.manage .form__input {
+  min-height: 35px;
+  width: 100%;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #9ea0a5;
+  padding: 5px 15px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  color: #9ea0a5;
+}
+
+.manage .form__btn {
+  padding: 10px 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: #FFF;
+  background-color: #3F51B5;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+}
+
+.manage .form__close-btn {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  position: absolute;
+  top: 5%;
+  right: 8%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #3F51B5;
+  cursor: pointer;
+}
+
+.manage .form .checkbox-row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+.manage .form .checkbox-row input {
+  margin-right: 10px;
+}
+
+.manage .form .checkbox-row span {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
 }

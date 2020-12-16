@@ -6,15 +6,15 @@ const Items = ({users}) => {
     <React.Fragment>
       {users.map((item) => {
         return (
-          <tr className='users_row'>
-            <td className='col-3 row'>
+          <tr className='users__row'>
+            <td className='col-4 row'>
               <img className='users__avatar' src={item.avatar} alt='avatar' />
               <span className='users__name'>{item.fullName}</span>
             </td>
-            <td className='col-3 users__headers'>{item.userID}</td>
-            <td className='col-3 users__headers'>{item.phone}</td>
-            <td className='col-3 users__headers'>{item.email}</td>
-            <td className='col-1 users__headers users__date'>{item.dateOfRegistry}</td>
+            <td className='col-2 users__headers'>{item.userID}</td>
+            <td className='col-2 users__headers'>{item.phone}</td>
+            <td className='col-2 users__headers'>{item.email}</td>
+            <td className='col-2 users__headers users__date'>{item.dateOfRegistry}</td>
           </tr>
         );
       })}

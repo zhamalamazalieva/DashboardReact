@@ -6,8 +6,6 @@ import axios from 'axios';
 
 function App() {
   const [userData, setUserData] = React.useState([]);
-  console.log(userData)
-
   React.useEffect(async () => {
     await axios
     .get(`http://localhost:3000/database.json`)
