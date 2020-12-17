@@ -37,19 +37,21 @@
                 color: $color-darkGray;
                 @include flex-center(flex-start);
                 transition: 0.3s;
-                &:hover{
-                    color: $color-gray;
-                }
+              
             }
             &__item{
                 margin-bottom: 34px;
                 &:last-child{
                     margin-bottom: 0;
                 }
+                svg{
+                    max-width: 20px;
+                    max-height: 20px;
+                    fill: $color-darkGray;
+                    margin-right: 8px;
+                }
             }
-            &__icon{
-                margin-right: 8px;
-            }
+           
         }
     }
     &__bottom{
