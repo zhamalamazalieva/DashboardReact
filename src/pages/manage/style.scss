@@ -89,7 +89,8 @@
             margin-left: 40px;
         }
         &__avatar{
-            max-width: 32px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             position: absolute;
             top:50%;
@@ -97,12 +98,43 @@
         }
     }
     .wrapper{
-        width: 30%;
+        display: flex;
+        flex-wrap: nowrap;
+        width: 60%;
         position: absolute;
         top:10%;
         left: 50%;
         transform: translateX(-50%);
         z-index: 2;
+        box-shadow: 0 1px 3px 0 rgba($color: #000000, $alpha: 1.0);
+        background-color: $color-white;
+
+    }
+    .modal__background{
+        position: relative;
+        background-image: url(../../assets/image/png/background.png);
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        &::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color:$color-blue, $alpha: .4);
+            z-index: 2;
+
+        }
+        svg{
+            width: 150px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+        }
 
     }
     .form{
@@ -110,7 +142,6 @@
         display: flex;
         flex-direction: column;
         background-color: $color-white;
-        box-shadow: 0 1px 3px 0 rgba($color: #000000, $alpha: 1.0);
         label{
             position: relative;
             margin-bottom: 30px;
