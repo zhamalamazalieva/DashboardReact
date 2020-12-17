@@ -3,8 +3,8 @@
       {
      "id": 0,
      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png",
-        "fullName": "Петров Петр Петрович",
-        "userID": "DEV63016762",
+        "fullName": "Атабек Курманов",
+        "userID": "JS0000152",
         "email": "rsnyder@blogspan.gov",
      "phone": "1-(618)312-3065",
      "dateOfRegistry": "04/28/2018"
@@ -12,8 +12,8 @@
     {
      "id": 1,
      "avatar": "https://www.pngkey.com/png/detail/55-556528_pic-avatars-for-jira-star-wars.png",
-        "fullName": "Бетмен Хренович",
-        "userID": "DEV63016762",
+        "fullName": "Айдай Макенова",
+        "userID": "JS0000153",
         "email": "rsnyder@blogspan.gov",
      "phone": "1-(618)312-3065",
      "dateOfRegistry": "04/28/2018"
@@ -22,7 +22,7 @@
      "id": 2,
      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png",
         "fullName": "Жамал Амазалиева",
-        "userID": "DEV63016762",
+        "userID": "JS0000153",
         "email": "rsnyder@blogspan.gov",
      "phone": "1-(618)312-3065",
      "dateOfRegistry": "04/28/2018"
@@ -30,8 +30,8 @@
     {
      "id": 3,
      "avatar": "https://www.pngkey.com/png/detail/55-556528_pic-avatars-for-jira-star-wars.png",
-        "fullName": "Петров Петр Петрович",
-        "userID": "DEV63016762",
+        "fullName": "Атай Боталиев",
+        "userID": "JS0000154",
         "email": "rsnyder@blogspan.gov",
      "phone": "1-(618)312-3065",
      "dateOfRegistry": "04/28/2018"
@@ -39,8 +39,8 @@
     {
      "id": 4,
      "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png",
-        "fullName": "Петров Петр Петрович",
-        "userID": "DEV63016762",
+        "fullName": "Мунарбек Сымбатов",
+        "userID": "JS0000155",
         "email": "rsnyder@blogspan.gov",
      "phone": "1-(618)312-3065",
      "dateOfRegistry": "04/28/2018"
@@ -48,11 +48,20 @@
     {
      "id": 5,
      "avatar": "https://www.pngkey.com/png/detail/55-556528_pic-avatars-for-jira-star-wars.png",
-        "fullName": "Петров Петр Петрович",
-        "userID": "DEV63016762",
+        "fullName": "Бексултан Иминжанов",
+        "userID": "JS0000156",
         "email": "rsnyder@blogspan.gov",
      "phone": "1-(618)312-3065",
      "dateOfRegistry": "04/28/2018"
-      }
+      },
+      {
+         "id": 6,
+         "avatar": "https://www.pngkey.com/png/detail/55-556528_pic-avatars-for-jira-star-wars.png",
+            "fullName": "Нурсултан Ашымалиев",
+            "userID": "JS0000157",
+            "email": "rsnyder@blogspan.gov",
+         "phone": "1-(618)312-3065",
+         "dateOfRegistry": "04/28/2018"
+          }
     ]
    }

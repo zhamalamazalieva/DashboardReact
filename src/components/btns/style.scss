@@ -1,0 +1,32 @@
+@import '../global';
+.btn-goBack{
+   
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+   
+    svg{
+        width: 25px;
+        height: 15px;
+        fill:$color-gray;
+        margin-right: 8px;
+        transition: 0.3s;
+
+      
+    }
+    span{
+        @include font(14px);
+        color: $color-gray;
+       
+    }
+    &:hover{
+        svg{
+        fill:$color-black;
+        }
+        span{
+        color:$color-black;
+        }
+    }
+}

@@ -4,6 +4,8 @@ import searchBtn from '../../assets/image/svg/search.svg';
 import Items from './items';
 import './style.scss';
 import axios from 'axios';
+import {BtnGoBack} from '../../components/btns/index.js';
+
 
 
 
@@ -21,12 +23,9 @@ const Manage = () => {
  
     const [activeModal, setActiveModal] = React.useState(false);    
     const handleClick = () => {
-        setActiveModal(true);
+        setActiveModal(activeModal ? false : true);
     }
-    const cancelClick = (e) => {
-        setActiveModal(activeModal ? true : false);
-        e.preventDefault();
-    }
+    let date = new Date().toLocaleDateString(); 
     const SaveData = (event) => {
         setNewUser({
             id:'',
@@ -35,7 +34,7 @@ const Manage = () => {
             userID:event.target.form[1].value,
             email:event.target.form[3].value,
             phone:event.target.form[2].value,
-            dateOfRegistry:''
+            dateOfRegistry:date,
         }) 
     }   
     const handleSubmit = (event) => {
@@ -51,7 +50,7 @@ const Manage = () => {
             dateOfRegistry:''
         });
     }
-
+    console.log(date)
     React.useEffect(async () => {
         await axios
         .get(`http://localhost:3000/database.json`)
@@ -63,10 +62,12 @@ const Manage = () => {
        <section className='manage col-10'>
            {activeModal &&(
                <div className='wrapper'>
-                    <button className='form__close-btn' onclick={cancelClick}>&#10006;</button>
-                    <div className='col-6'>
+                    <div className='col-6 modal__left'>
+                    <BtnGoBack />
+                  <h2 className='modal__title'>Create a new user</h2>
+                  <span className='modal__subtitle'>Add main information about user</span>
                        <form className='manage__form form modal' onSubmit = {(event) => handleSubmit(event)}>
-                  
+                   
                   <label>
                       <span className='form__text'>Name</span>
                       <input required onChange = {(event) => SaveData(event)} value={newUser.fullName} type='text' className='form__input'/>
@@ -77,7 +78,7 @@ const Manage = () => {
                   </label>
                   <label>
                       <span className='form__text'>Phone Number</span>
-                      <input required onChange = {(event) => SaveData(event)} value={newUser.phone} type='number' className='form__input'/>
+                      <input required onChange = {(event) => SaveData(event)} value={newUser.phone} type='text' className='form__input'/>
                   </label>
                   <label>
                       <span className='form__text'>Email</span>
@@ -87,10 +88,7 @@ const Manage = () => {
                       <span className='form__text'>Profile Picture</span>
                       <input required onChange = {(event) => SaveData(event)} value={newUser.avatar} type='text' className='form__input'/>
                   </label>
-                  <div className='checkbox-row row'>
-                      <input type='checkbox' />
-                      <span >I have read the <a href='#'>Terms and Conditions</a></span>
-                  </div>
+            
                   <button type='submit' className='form__btn'>ADD NEW USER</button>
               </form>
                     </div>

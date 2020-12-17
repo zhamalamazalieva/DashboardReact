@@ -100,7 +100,7 @@
     .wrapper{
         display: flex;
         flex-wrap: nowrap;
-        width: 60%;
+        width: 70%;
         position: absolute;
         top:10%;
         left: 50%;
@@ -108,6 +108,15 @@
         z-index: 2;
         box-shadow: 0 1px 3px 0 rgba($color: #000000, $alpha: 1.0);
         background-color: $color-white;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba($color: #000000, $alpha: .4);
+            width: 100%;
+            z-index: 1;
+        }
 
     }
     .modal__background{
@@ -137,8 +146,24 @@
         }
 
     }
+    .modal{
+        &__left{
+        padding: 25px 25px 25px;
+        }
+        &__title{
+            @include font(24px, 500);
+            color: $color-black;
+            margin:24px 0 5px
+        }
+        &__subtitle{
+            @include font(14px);
+            color: $color-gray; 
+            margin-bottom: 40px      
+        }
+        
+    }
     .form{
-        padding: 60px 25px 25px;
+        margin-top: 40px;
         display: flex;
         flex-direction: column;
         background-color: $color-white;
@@ -147,6 +172,7 @@
             margin-bottom: 30px;
 
         }
+       
         &__text{
             @include font(14px);
             position: absolute;
@@ -155,6 +181,7 @@
             background-color: $color-white;
             padding: 2px 4px;
             color: $color-gray;
+          
         }
         &__input{
             min-height: 35px;
@@ -165,6 +192,10 @@
             padding: 5px 15px;
             @include font(16px);
             color: $color-gray;
+            &:focus{
+                border: 2px solid $color-blue !important;
+                
+            }
 
 
         }
