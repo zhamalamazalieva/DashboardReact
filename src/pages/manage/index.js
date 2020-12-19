@@ -23,7 +23,7 @@ const Manage = () => {
  
     const [activeModal, setActiveModal] = React.useState(false);    
     const handleClick = () => {
-        setActiveModal(activeModal ? false : true);
+        setActiveModal(true);
     }
     let date = new Date().toLocaleDateString(); 
     const SaveData = (event) => {
@@ -63,7 +63,9 @@ const Manage = () => {
            {activeModal &&(
                <div className='wrapper'>
                     <div className='col-6 modal__left'>
+                    <div onClick={setActiveModal(false)}>
                     <BtnGoBack />
+                    </div>
                   <h2 className='modal__title'>Create a new user</h2>
                   <span className='modal__subtitle'>Add main information about user</span>
                        <form className='manage__form form modal' onSubmit = {(event) => handleSubmit(event)}>
@@ -133,7 +135,7 @@ const Manage = () => {
                    <th className='col-4 users__headers'>Selected 2 Users</th>
                    <th className='col-2 users__headers'>Users ID</th>
                    <th className='col-2 users__headers'>Phone Number</th>
-                   <th className='col-2 users__headers'>Email Addres</th>
+                   <th className='col-2 users__headers'>Email Address</th>
                    <th className='col-2 users__headers'>Account Created</th>
                </tr>   
                <Items users={userData}/> 
