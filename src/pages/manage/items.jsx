@@ -17,9 +17,10 @@ let now = new Date();
             <td className='col-2 users__headers'>{item.phone}</td>
             <td className='col-2 users__headers'>{item.email}</td>
             <td className='col-2 users__headers users__date'>
-              {users[index].dateOfRegistry.length !== 0 ?
-              <Time value={wasDate} format='DD/MM/YYYY'/> : 
-              <Time value={now} format='DD/MM/YYYY'/>}</td>
+              {users[index].dateOfRegistry.length 
+              !== 0 ?
+              <Time value={wasDate} format='YYYY/MM/DD'/> : 
+              <Time value={now} format='YYYY/MM/DD'/>}</td>
           </tr>
         );
       })}

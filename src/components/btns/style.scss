@@ -11,8 +11,10 @@
     display: flex;
     align-items: center;
     background-color: transparent;
-  
-    svg{
+    border: none;
+    outline: none;
+    transition: 0.3s;
+    &__svg{
         width: 25px;
         height: 15px;
         fill:$color-gray;
@@ -35,7 +37,6 @@
 .btn-new-product{
     background-color: $color-green;
     color: $color-white;
-    transition: 0.3s;
     &:hover{
         border:2px solid $color-green ;
         background-color: transparent;
@@ -58,7 +59,16 @@
     background-color: $color-blue;
     color: $color-white;
     svg{
+        transition: 0.3s;
         margin-right: 8px;
         fill:$color-white;
+    }
+    &:hover{
+        border: 2px solid $color-blue;
+        background-color: $color-white;
+        color: $color-blue;
+        svg{
+            fill:$color-blue;
+        }
     }
 }

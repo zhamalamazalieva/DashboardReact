@@ -1,15 +1,12 @@
 import React from 'react';
 import Clock from '../../assets/image/svg/clock.svg';
 import Download from '../../assets/image/svg/download.svg';
-import { Products} from './const';
+import {Products} from './const';
 import {Link} from 'react-router-dom';
 
 
 const ProductsItem = () => {
-
         const [count, setCount] = React.useState(0);
-
-    
     return(
         <div className='row products__row'>
             {Products.map((item) => {

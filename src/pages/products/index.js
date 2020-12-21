@@ -13,12 +13,7 @@ const Products = () => {
             <SearchForm />
             <BtnNewProduct />
             </div>
-           
                 <ProductsItem />
-      
-               
-        
-            
         </section>
     )
 };

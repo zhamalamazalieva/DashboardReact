@@ -107,7 +107,7 @@
         z-index: 2;
         box-shadow: 0px 1px 0px rgba(63, 63, 68, 0.05), 0px 1px 3px rgba(63, 63, 68, 0.15);
         background-color: $color-white;
-        overflow: hidden;
+        // overflow: hidden;
         &__wrapper{
             position: fixed;
             left: 0;
@@ -134,7 +134,7 @@
             background-color: rgba($color:$color-blue, $alpha: .4);
             z-index: 2;
         }}
-        svg{
+        &__logo{
             width: 150px;
             position: absolute;
             top: 50%;
@@ -164,20 +164,8 @@
         display: flex;
         flex-direction: column;
         background-color: $color-white;
-        label{
-            position: relative;
-            margin-bottom: 30px;
-        }
-        &__text{
-            @include font(14px);
-            position: absolute;
-            top:-25%;
-            left: 10px;
-            background-color: $color-white;
-            padding: 2px 4px;
-            color: $color-gray;
-          
-        }
+      
+      
         &__input{
             min-height: 35px;
             width:100%;
@@ -191,8 +179,30 @@
                 border: 2px solid $color-blue !important;
                 
             }
+            &::placeholder{
+                @include font(14px);
+                color: $color-gray;
+            }
 
 
+        }
+        label{
+            position: relative;
+            margin-bottom: 30px;
+            span{
+                opacity: 0;
+                @include font(12px);
+                position: absolute;
+                top:-25%;
+                left: 10px;
+                background-color: $color-white;
+                padding: 2px 4px;
+                color: $color-gray;
+                white-space: nowrap;
+            }
+            input:focus + span{
+                   opacity: 1;
+            }
         }
         &__btn{
             padding: 10px 10px;
