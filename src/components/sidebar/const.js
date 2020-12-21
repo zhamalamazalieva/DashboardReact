@@ -5,7 +5,7 @@ import authentication from '../../assets/image/svg/Authentication.svg';
 import typography from '../../assets/image/svg/Typography.svg';
 import img from '../../assets/image/svg/img.svg';
 
-export const navList = [
+export const NavList = [
     {
         text: 'Dashboard',
         link:'/',

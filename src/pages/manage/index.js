@@ -1,14 +1,11 @@
 import React from 'react';
 import filterBtn from '../../assets/image/svg/filter.svg';
 import searchBtn from '../../assets/image/svg/search.svg';
+import {BtnGoBack, BtnFilter, BtnAdd} from '../../components/btns/index.js';
+import SearchForm from '../../components/search_form/search_form';
 import Items from './items';
 import './style.scss';
 import axios from 'axios';
-import {BtnGoBack, BtnFilter, BtnAdd} from '../../components/btns/index.js';
-import SearchForm from '../../components/search_form/search_form';
-
-
-
 
 const Manage = () => {
     const [userData, setUserData] = React.useState([]);
@@ -21,12 +18,19 @@ const Manage = () => {
         phone:'',
         dateOfRegistry:''
     });
- 
+    
+    const modalRef =React.useRef();
+    const modalWrapperRef = React.useRef();
+    const handleClickOutside = (event) => {
+        if(!event.path.includes(modalRef.current)){
+            setActiveModal(false);
+        }
+    };
     const [activeModal, setActiveModal] = React.useState(false);    
     const handleClick = () => {
-        setActiveModal(true);
-    }
-    let date = new Date().toLocaleDateString(); 
+        setActiveModal(activeModal ? false:true);
+    };
+
     const SaveData = (event) => {
         setNewUser({
             id:'',
@@ -35,7 +39,7 @@ const Manage = () => {
             userID:event.target.form[1].value,
             email:event.target.form[3].value,
             phone:event.target.form[2].value,
-            dateOfRegistry:date,
+            dateOfRegistry:'',
         }) 
     }   
     const handleSubmit = (event) => {
@@ -51,51 +55,63 @@ const Manage = () => {
             dateOfRegistry:''
         });
     }
-    console.log(date)
     React.useEffect(async () => {
         await axios
         .get(`http://localhost:3000/database.json`)
         .then((response) => response)
         .then(({data}) => setUserData(data.users));
       }, []);
-
+    React.useEffect(() => {
+        if (modalWrapperRef.current){
+            modalWrapperRef.current.addEventListener('click', handleClickOutside);
+        }}, [activeModal]
+   );
     return(
-       <section className='manage col-10'>
+       <section className='manage'>
+            <div className='space-between'>
+                <div className='row'>
+                <BtnFilter />
+                <SearchForm />
+                </div>            
+                <div onClick={handleClick} >
+                <BtnAdd />
+                </div>
+           </div>
            {activeModal &&(
-               <div className='wrapper'>
-                    <div className='col-6 modal__left'>
-                    <div onClick={setActiveModal(false)}>
-                    <BtnGoBack />
-                    </div>
-                  <h2 className='modal__title'>Create a new user</h2>
-                  <span className='modal__subtitle'>Add main information about user</span>
-                       <form className='manage__form form modal' onSubmit = {(event) => handleSubmit(event)}>
-                   
-                  <label>
-                      <span className='form__text'>Name</span>
-                      <input required onChange = {(event) => SaveData(event)} value={newUser.fullName} type='text' className='form__input'/>
-                  </label>
-                  <label>
-                      <span className='form__text'>ID Number</span>
-                      <input required onChange = {(event) => SaveData(event)} value={newUser.userID} type='text' className='form__input'/>
-                  </label>
-                  <label>
-                      <span className='form__text'>Phone Number</span>
-                      <input required onChange = {(event) => SaveData(event)} value={newUser.phone} type='text' className='form__input'/>
-                  </label>
-                  <label>
-                      <span className='form__text'>Email</span>
-                      <input required onChange = {(event) => SaveData(event)} value={newUser.email} type='email' className='form__input'/>
-                  </label>
-                  <label>
-                      <span className='form__text'>Profile Picture</span>
-                      <input required onChange = {(event) => SaveData(event)} value={newUser.avatar} type='text' className='form__input'/>
-                  </label>
-            
-                  <button type='submit' className='form__btn'>ADD NEW USER</button>
-              </form>
-                    </div>
-                    <div className='col-6'>
+               <div ref={modalWrapperRef} className='modal__wrapper'>
+                   <div ref={modalRef} className='modal'>
+                        <div className='col-6 modal__left'>
+                            <div>
+                            <div onClick={setActiveModal(false)}>
+                            <BtnGoBack />
+                            </div>
+                            <h2 className='modal__title'>Create a new user</h2>
+                            <span className='modal__subtitle'>Add main information about user</span>
+                                <form className='manage__form form' onSubmit = {(event) => handleSubmit(event)}>
+                                        <label>
+                                            <span className='form__text'>Name</span>
+                                            <input required onChange = {(event) => SaveData(event)} value={newUser.fullName} type='text' className='form__input'/>
+                                        </label>
+                                        <label>
+                                            <span className='form__text'>ID Number</span>
+                                            <input required onChange = {(event) => SaveData(event)} value={newUser.userID} type='text' className='form__input'/>
+                                        </label>
+                                        <label>
+                                            <span className='form__text'>Phone Number</span>
+                                            <input required onChange = {(event) => SaveData(event)} value={newUser.phone} type='text' className='form__input'/>
+                                        </label>
+                                        <label>
+                                            <span className='form__text'>Email</span>
+                                            <input required onChange = {(event) => SaveData(event)} value={newUser.email} type='email' className='form__input'/>
+                                        </label>
+                                        <label>
+                                            <span className='form__text'>Profile Picture</span>
+                                            <input required onChange = {(event) => SaveData(event)} value={newUser.avatar} type='text' className='form__input'/>
+                                        </label>                                
+                                        <button type='submit' className='form__btn'>ADD NEW USER</button>
+                                </form>
+                        </div>
+                        <div className='col-6  modal__right'>
                         <div className='modal__background'>
                             <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M0 18.1065C0 27.9411 8.05887 36 18.1065 36C27.9411 36 36 27.9411 36 18.1065C36 8.05887 27.9411 0 18.1065 0C8.05887 0 0 8.05887 0 18.1065ZM33.7263 18.1065C33.7263 26.6854 26.6854 33.7263 18.1065 33.7263C9.34353 33.7263 2.27368 26.714 2.27368 18.1065C2.27368 9.3146 9.3146 2.27368 18.1065 2.27368C26.714 2.27368 33.7263 9.34353 33.7263 18.1065Z" fill="white"/>
@@ -104,20 +120,10 @@ const Manage = () => {
                             </svg>
                         </div>
                     </div>
-             
-             
+                   </div>
+                </div>
                 </div>
             )}
-           <div className='space-between'>
-                <div className='row'>
-                <BtnFilter />
-                <SearchForm />
-                </div>
-            
-            <div onClick={handleClick} >
-              <BtnAdd />
-            </div>
-           </div>
            <table className='manage__users users'>
                <tr className='users__row'>
                    <th className='col-4 users__headers'>Selected 2 Users</th>

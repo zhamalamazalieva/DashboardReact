@@ -1,57 +1,55 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
-	font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
+  background-color: #f2f2f2;
 }
-
 li {
-	list-style-type: none;
+  list-style-type: none;
 }
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
-.container{
-	max-width: 1870px;
-	margin: 0 auto;
+.container {
+  max-width: 1870px;
+  margin: 0 auto;
 }
-.row {
-	display: flex;
+.row,.column, .align-center, .space-between {
+  display: flex;
 }
-.column{
-	display: flex;
-	flex-direction: column;
+.column {
+  flex-direction: column;
 }
-.align-center{
-	display: flex;
-	align-items: center;
+.align-center {
+  align-items: center;
 }
-.space-between{
-	display: flex;
-	justify-content: space-between;
+.space-between {
+  justify-content: space-between;
 }
-.col-1{
-	width: 8.333%;
+.col-1 {
+  width: 8.333%;
 }
-.col-2{
-	width: 16.6666%;
+.col-2 {
+  width: 16.6666%;
 }
-.col-3{
-	width: 25%;
+.col-3 {
+  width: 25%;
 }
-.col-4{
-	width: 33.3333%;
+.col-4 {
+  width: 33.3333%;
 }
-.col-6{
-	width: 50%;	
-}.col-10{
-	width: 83.34%;
+.col-6 {
+  width: 50%;
 }
-.btn{
-	cursor: pointer;
+.col-10 {
+  width: 83.34%;
+}
+.btn {
+  cursor: pointer;
 }

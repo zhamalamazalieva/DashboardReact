@@ -1,5 +1,5 @@
 import React from 'react';
-import { navList } from './const.js';
+import {NavList} from './const.js';
 import {Link} from 'react-router-dom';
 
 const Nav = () => {
@@ -10,7 +10,7 @@ const Nav = () => {
     return (
         <nav className='sidebar__nav nav'>
             <ul className='nav__menu'>
-                {navList.map((item, index) => {
+                {NavList.map((item, index) => {
                     return (
                         <li 
                         onClick = {() => {handleClick(index)}}

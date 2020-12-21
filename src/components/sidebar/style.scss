@@ -1,87 +1,86 @@
-@import '../global';
-.sidebar{
-	box-shadow: 0px 0px 0px rgba(63, 63, 68, 0.05), 0px 1px 3px rgba(63, 63, 68, 0.15);
-    &__top{
-        padding:24px 16px;
-        width: 100%;
-        display:flex;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-    }
-    &__avatar{
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-    }
-    &__name{
-        @include font();
-        color:$color-black;
-        margin: 16px 0 4px;
-    }
-    &__position{
-        @include font(12px);
-        color: $color-gray;
-    }
-    &__middle{
-        text-align: left;
-        margin: 0 16px;
-    }
-    &__nav{
-        border-bottom:1px solid $color-gray;
-        border-top: 1px solid $color-gray;
-        padding: 35px 16px 27px;
-        .menu{
-            &__link{
-                @include font(14px, 500);
-                color: $color-darkGray;
-                @include flex-center(flex-start);
-                transition: 0.3s;
-                padding: 13px 15px;
-                
-              
-            }
-            &__item{
-                border: transparent;
-                border-radius: 4px;
-                svg{
-                    max-width: 20px;
-                    max-height: 20px;
-                    fill: $color-darkGray;
-                    margin-right: 8px;
-                }
-                &.is-active {
-                    background-color: $color-lightBlue;
-                    border-left: 3px solid $color-blue;
-                    svg {
-                        fill: $color-blue;
-                    }
-                    link{
-                        color: $color-black;
-                    }
-                }
-            }
-         
-           
+@import "../global";
+.sidebar {
+  position: fixed;
+  top: 64px;
+  box-shadow: 0px 0px 0px rgba(63, 63, 68, 0.05),
+              0px 1px 3px rgba(63, 63, 68, 0.15);
+  background-color: $color-white;
+  min-height: 100vh;
+
+  &__top {
+    padding: 24px 16px;
+    width: 100%;
+    @include flex-center();
+    flex-direction: column;
+    text-align: center;
+  }
+  &__avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  &__user {
+    @include font();
+    color: $color-black;
+    margin: 16px 0 4px;
+  }
+  &__position {
+    @include font(12px);
+    color: $color-gray;
+  }
+  &__middle {
+    text-align: left;
+    margin: 0 16px;
+  }
+  &__nav {
+    border-bottom: 1px solid $color-gray;
+    border-top: 1px solid $color-gray;
+    padding: 35px 16px 27px;
+    .menu {
+      &__link {
+        @include font(14px, 500);
+        color: $color-darkGray;
+        @include flex-center(flex-start);
+        transition: 0.3s;
+        padding: 13px 15px;
+      }
+      &__item {
+        border: transparent;
+        border-radius: 4px;
+        svg {
+          max-width: 20px;
+          max-height: 20px;
+          fill: $color-darkGray;
+          margin-right: 8px;
         }
-    }
-    &__bottom{
-        display: flex;
-        flex-direction: column;
-        padding:24px 0 0 16px;
-        a{
-            span{
-                @include font(15px, 500);
-                color: $color-darkGray;
-                margin-left: 8px
-            }
+        &.is-active {
+          background-color: $color-lightBlue;
+          border-left: 3px solid $color-blue;
+          svg {
+            fill: $color-blue;
+          }
+          link {
+            color: $color-black;
+          }
         }
+      }
     }
-    &__support{
-        @include font(13px, 500);
-        color: $color-gray;
-        margin-bottom: 20px;
+  }
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0 0 16px;
+    a {
+      span {
+        @include font(15px, 500);
+        color: $color-darkGray;
+        margin-left: 8px;
+      }
     }
-  
-    
+  }
+  &__support {
+    @include font(13px, 500);
+    color: $color-gray;
+    margin-bottom: 20px;
+  }
 }

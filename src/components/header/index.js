@@ -5,7 +5,6 @@ import './style.scss';
 const Header = () => {
     return(
        <div className="header">
-            <div className="container">
             <div className="header__row">
                 <Logo />
                 <div className="header__nav">
@@ -13,7 +12,6 @@ const Header = () => {
                 </div>
             </div>
         </div>
-       </div>
     )
 };
 export default Header;

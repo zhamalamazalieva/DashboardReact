@@ -48,20 +48,24 @@
     }
   }
   &__row{
-      margin-top: 24px;
-      margin: 24px -15px 0 -15px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    margin: 24px 0;
   }
   &__item{
       border-radius: 4px;
       box-shadow:0 1px 3px 0 rgba(63, 63, 68, 0.5);
-      width: 100%;
+      width: 90%;
       padding: 26px 20px 0;
       background-color: $color-white;
       text-align: center;
+
+      overflow: hidden;
  
   }
   &__margin{
-      margin: 0 15px;
+    margin: 20px 5px; 
   }
   &__icon{
     border-radius: 4px;
@@ -70,9 +74,7 @@
     width: 58px;
     height: 58px;
     margin: 0 auto;
-    img{
    
-    }
   }
   &__title{
     @include font(18px, 500);
@@ -92,14 +94,14 @@
   &__info{
       border-top: 1px solid $color-gray;
       padding: 12px 0;
-      span{
-        @include font(14px);
-        color: $color-darkGray;
-      }
       img{
           width: 20px;
           height: 20px;
       }
+  }
+  &__link{
+    @include font(14px);
+    color: $color-darkGray;
   }
 
 }

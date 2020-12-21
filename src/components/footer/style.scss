@@ -1,0 +1,16 @@
+@import '../global';
+.footer{
+    padding: 16px 0 40px;
+    margin: 0 24px;
+    border-top:1px solid $color-gray;
+    
+    &__copyright{
+        @include font(14px);
+        color: $color-black;
+        margin-bottom: 5px;
+    }
+    &__description{
+        @include font(12px);
+        color: $color-gray;
+    }
+}
