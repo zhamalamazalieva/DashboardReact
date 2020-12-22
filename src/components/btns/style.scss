@@ -65,7 +65,7 @@
     }
     &:hover{
         border: 2px solid $color-blue;
-        background-color: $color-white;
+        background-color: transparent;
         color: $color-blue;
         svg{
             fill:$color-blue;

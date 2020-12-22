@@ -28,7 +28,7 @@ const ProductsItem = () => {
                             <div className='products__download align-center'>
                                 <img src={Download} alt='download' />
                                 <span className='products__info-text'>
-                                    <Link onClick={() => setCount(count + 1)} className='products__link'to={item.link} target="_blank" download>{count} Downloads</Link>
+                                    <Link onClick={() => setCount(count + 1)} className='products__link' to={item.link} target="_blank" download>{count} Downloads</Link>
                                 </span>
                             </div>
                         </div>
