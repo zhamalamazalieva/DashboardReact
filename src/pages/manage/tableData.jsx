@@ -1,11 +1,14 @@
 import React from 'react';
 import Time from  'react-time';
+import {rows, columns} from './const';
+import { DataGrid } from '@material-ui/data-grid';
 
-const Items = ({users}) => {
+const TableData = ({rows}) => {
 let now = new Date();
   return (
     <React.Fragment>
-      {users.map((item, index) => {
+       <DataGrid rows={rows} columns={columns} pageSize={6} checkboxSelection />
+      {/* {users.map((item, index) => {
         let wasDate = new Date(`${item.dateOfRegistry}`)
         return (
           <tr className='users__row'>
@@ -23,9 +26,9 @@ let now = new Date();
               <Time value={now} format='YYYY/MM/DD'/>}</td>
           </tr>
         );
-      })}
+      })} */}
     </React.Fragment>
   );
 };
 
-export default Items;
+export default TableData;

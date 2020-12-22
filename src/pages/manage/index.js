@@ -1,14 +1,20 @@
 import React from 'react';
-import {rows, columns} from './const';
-import { DataGrid } from '@material-ui/data-grid';
 import './style.scss';
-
-
+import TableData from './tableData';
+import axios from 'axios';
 
 export default function Manage() {
+  const [userData, setUserData] = React.useState([]);
+    React.useEffect(async () => {
+              await axios
+              .get(`http://localhost:3000/database.json`)
+              .then((response) => response)
+              .then(({data}) => setUserData(data.users));
+            }, []);
   return (
-    <div style={{ height: 400, width: '100%' }} className='manage'>
-      <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
+    
+    <div style={{ height: 500, width: '100%', backgroundColor:'white' }} className='manage'>
+     <TableData rows={userData} />
     </div>
   );
 }

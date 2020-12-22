@@ -1,21 +1,42 @@
 export const columns = [
-    { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'firstName', headerName: 'First name', width: 130 },
-    { field: 'lastName', headerName: 'Last name', width: 130 },
+    { field: 'Selected users',
+      sortable: false,
+      headerName: '',
+      width: 220,
+      renderCell: (params) => (
+        <div className="row users__row">
+          <img className='users__avatar' src={params.row.avatar} alt='А картинки нет, ай ай' />
+          <span className='users__name'>{params.row.fullName}</span>
+        </div>
+      ),
+    },
+
     {
-      field: 'age',
-      headerName: 'Age',
+      field: 'userID',
+      headerName: 'User ID',
       type: 'number',
-      width: 90,
+      width: 130,
     },
     {
-      field: 'fullName',
-      headerName: 'Full name',
+      field: 'email',
+      headerName: 'Email Address',
       description: 'This column has a value getter and is not sortable.',
-      sortable: false,
-      width: 160,
-      valueGetter: (params) =>
-        `${params.getValue('firstName') || ''} ${params.getValue('lastName') || ''}`,
+      width: 200,
+
+    },
+    {
+      field: 'phone',
+      headerName: 'Phone Number',
+      description: 'This column has a value getter and is not sortable.',
+      width: 200,
+
+    },
+    {
+      field: 'dateOfRegistry',
+      headerName: 'Account created',
+      description: 'This column has a value getter and is not sortable.',
+      width: 200,
+
     },
   ];
   
