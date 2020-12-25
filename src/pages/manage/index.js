@@ -2,29 +2,51 @@ import React from 'react';
 import './style.scss';
 import TableData from './tableData';
 import axios from 'axios';
+import {BtnGoBack, BtnFilter, BtnAdd} from '../../components/btns/';
+import SearchForm from '../../components/search_form/search_form';
+import Modal from './modal';
+
 
 export default function Manage() {
   const [userData, setUserData] = React.useState([]);
-    React.useEffect(async () => {
+  const [activeModal, setActiveModal] = React.useState(false);
+
+  const handleClick = () => {
+      setActiveModal(true);};
+
+  React.useEffect(async () => {
               await axios
               .get(`http://localhost:3000/database.json`)
               .then((response) => response)
               .then(({data}) => setUserData(data.users));
             }, []);
   return (
-    
-    <div style={{ height: 500, width: '100%', backgroundColor:'white' }} className='manage'>
-     <TableData rows={userData} />
-    </div>
+    <section className='manage'>
+        {activeModal && (
+        <Modal
+          userData={userData}
+          setUserData={setUserData}
+          activeModal={activeModal}
+          setActiveModal={setActiveModal}
+        
+        />
+      )}
+       <div className='space-between'>
+          <div className='row'>
+              <BtnFilter />
+              <SearchForm />
+          </div>            
+          <div onClick={handleClick} >
+              <BtnAdd />
+          </div>
+        </div>
+        <div style={{ height: 500, width: '100%', backgroundColor:'white'}} className='users'>
+          <TableData rows={userData} />
+        </div>
+    </section>
   );
 }
-// import filterBtn from '../../assets/image/svg/filter.svg';
-// import searchBtn from '../../assets/image/svg/search.svg';
-// import {BtnGoBack, BtnFilter, BtnAdd} from '../../components/btns/index.js';
-// import SearchForm from '../../components/search_form/search_form';
-// import Items from './items';
-// import './style.scss';
-// import axios from 'axios';
+
 
 // const Manage = () => {
 //     const [userData, setUserData] = React.useState([]);

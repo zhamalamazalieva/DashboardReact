@@ -43,7 +43,7 @@ const Products = () => {
             <SearchForm />
             <BtnNewProduct />
             </div>
-                <ProductsItem />
+            <ProductsItem />
         </section>
     )
 };
