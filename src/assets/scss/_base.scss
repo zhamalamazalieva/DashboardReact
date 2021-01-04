@@ -22,6 +22,9 @@ img {
   max-width: 1870px;
   margin: 0 auto;
 }
+.section-container{
+  padding: 24px;
+}
 .row,.column, .align-center, .space-between {
   display: flex;
 }

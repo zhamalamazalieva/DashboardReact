@@ -8,7 +8,7 @@ import img from '../../assets/image/svg/img.svg';
 export const NavList = [
     {
         text: 'Dashboard',
-        link:'/',
+        link:'/dashboard',
         icon: (
           <svg
             version='1.1'

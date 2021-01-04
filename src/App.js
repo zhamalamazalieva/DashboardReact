@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from './components/header';
 import Footer from './components/footer';
-import Sidebar from './components/sidebar'
+import Sidebar from './components/sidebar';
+import Dashboard from './pages/dashboard';
 import Manage from './pages/manage';
 import Products from './pages/products';
 import {Route} from 'react-router-dom';
@@ -18,14 +19,16 @@ function App() {
           </div>
           <div className='column col-10'>
             <div className='pages'>
+            <Route exact path='/dashboard' component={Dashboard}/>
             <Route exact path='/users' component={Manage}/>
             <Route exact path='/products' component={Products}/>
             </div>
-            <Footer />
-        </div>
+           
         </div>
 
-      
+        </div>
+
+        <Footer />
 
     </div>
   );

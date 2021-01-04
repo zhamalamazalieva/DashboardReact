@@ -23,7 +23,8 @@ const Products = () => {
 
   return (
     <section className="products">
-      <ProductsTop />
+        <div className='section-container'>
+        <ProductsTop />
       <div className="space-between">
         <SearchForm setSearchValue={setSearchValue} />
         <BtnNewProduct />
@@ -45,6 +46,7 @@ const Products = () => {
           ))}
           </div>
       </div>
+        </div>
     </section>
   );
 };
