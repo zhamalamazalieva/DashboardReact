@@ -1,7 +1,7 @@
 import React from 'react';
 import Clock from '../../assets/image/svg/clock.svg';
 import Download from '../../assets/image/svg/download.svg';
-import {Products} from './const';
+import {Pro} from './const';
 import {Link} from 'react-router-dom';
 
 
@@ -9,17 +9,17 @@ const ProductsItem = () => {
         const [count, setCount] = React.useState(0);
     return(
         <div className='row products__row'>
-            {Products.map((item) => {
-           
-                     
+            {Pro.map((item) => {             
                return (
                 <div className='col-4 products__margin'>
                     <div className='products__item'>
                         <div className='products__icon'>
                             <img src={item.icon} alt='dropbox' />
                         </div>
+                        <div>
                         <h3 className='products__title'>{item.title}</h3>
-                        <p className='products__description'>Dropbox is a file hosting service that offers cloud storage, file synchronization, a personal cloud.</p>
+                        <p className='products__description'>{item.description}</p>
+                        </div>
                         <div className='row products__info space-between'>
                             <div className='products__update align-center'>
                                 <img src={Clock} alt='clock'/>

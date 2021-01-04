@@ -7,12 +7,12 @@ import Git from '../../assets/image/svg/github.svg';
 import Square from '../../assets/image/svg/square.svg';
 
 
-export const Products = [
+export const Pro = [
     {
         icon:Dropbox,
         link:'https://www.dropbox.com/ru/downloading',
         title:'Dropbox',
-        description:'Dropbox is a file hosting service that offers cloud storage, file synchronization, a personal cloud.',
+        description:'Dropbox is a file hosting service that offers cloud storage, service that offers cloud storage service that offers cloud storage service that offers cloud storage file synchronization, a personal cloud.Dropbox is a file hosting service that offers cloud storage, service that offers cloud storage service that offers cloud storage service that offers cloud storage file synchronization, a personal cloud.',
     },
     {
         icon:Corp,

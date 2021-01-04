@@ -1,49 +1,38 @@
 import React from 'react';
 import './style.scss';
-import ProductsTop from './products_top.jsx';
-import SearchForm from '../../components/search_form/search_form';
+import ProductsTop from './products_top';
+import SearchForm from './search_form';
 import ProductsItem from './products_item';
 import {BtnNewProduct} from '../../components/btns/index';
-import {Link} from 'react-router-dom';
-import { usePagination } from '@material-ui/lab/Pagination';
-import { MemoryRouter, Route } from 'react-router';
-import Pagination from '@material-ui/lab/Pagination';
-import PaginationItem from '@material-ui/lab/PaginationItem';
+import axios from 'axios';
 
-function PaginationLink() {
-    return (
-      <MemoryRouter initialEntries={['/inbox']} initialIndex={0}>
-        <Route>
-          {({ location }) => {
-            const query = new URLSearchParams(location.search);
-            const page = parseInt(query.get('page') || '1', 10);
-            return (
-              <Pagination
-                page={page}
-                count={5}
-                renderItem={(item) => (
-                  <PaginationItem
-                    component={Link}
-                    to={`/inbox${item.page === 1 ? '' : `?page=${item.page}`}`}
-                    {...item}
-                  />
-                )}
-              />
-            );
-          }}
-        </Route>
-      </MemoryRouter>
-    );
-  }
+
 const Products = () => {
+  const [products, setProducts] = React.useState([])
+  const [searchValue, setSearchValue] = React.useState('');
+
+  React.useEffect(() => {
+    axios
+      .get('http://localhost:3000/database.json')
+      .then((response) => response.data.products)
+      .then((item) => setProducts(item));
+  }, []);
+
     return (
         <section className='products'>
             <ProductsTop />
             <div className='space-between'>
-            <SearchForm />
+            <SearchForm setSearchValue={setSearchValue}/>
             <BtnNewProduct />
             </div>
-            <ProductsItem />
+            {products.filter(item => {
+            if (searchValue === '') {
+                return item
+            }
+            else if (item.productName.toLowerCase().includes(searchValue.toLowerCase())) {
+                return item
+            }
+            }).map(item => <ProductsItem item={item}/>)}
         </section>
     )
 };
