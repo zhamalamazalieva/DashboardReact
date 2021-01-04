@@ -3,6 +3,9 @@ import Clock from "../../assets/image/svg/clock.svg";
 import Download from "../../assets/image/svg/download.svg";
 import { Pro } from "./const";
 import { Link } from "react-router-dom";
+import distanseInWordsToNow from 'date-fns/distance_in_words_to_now';
+import ruLocale from 'date-fns/locale/ru';
+import enLocale from 'date-fns/locale/en';
 
 const ProductsItem = ({ item }) => {
   const [count, setCount] = React.useState(0);
@@ -19,7 +22,7 @@ const ProductsItem = ({ item }) => {
           <div className="row products__info space-between">
             <div className="products__update align-center">
               <img src={Clock} alt="clock" />
-              <span className="products__info-text">Updated 2 hr ago</span>
+              <span className="products__info-text">Updated {distanseInWordsToNow(item.updatedTime, { addSuffix: true, locale: enLocale, includeSeconds: true  })}</span>
             </div>
             <div className="products__download align-center">
               <img src={Download} alt="download" />

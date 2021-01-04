@@ -1,26 +1,20 @@
 import React from 'react';
 import {BtnGoBack} from '../../components/btns';
+import distanseInWordsToNow from 'date-fns/distance_in_words_to_now';
+import ruLocale from 'date-fns/locale/ru';
+import enLocale from 'date-fns/locale/en';
 
-const Modal = ({ setActiveModal, activeModal, setUserData, userData }) => {
+const Modal = ({ setActiveModal, activeModal, setProduct, product }) => {
 
-        const [newUser, setNewUser] =React.useState({
+        const [newProduct, setNewProduct] =React.useState({
             id:'',
-            avatar:'',
-            fullName:'',
-            userID:'',
-            email:'',
-            phone:'',
-            dateOfRegistry:''
+            productLogo:'',
+            productName:'',
+            productDescription:'',
+            updatedTime:'',
+            downloads:''
         });    
-        const currentDate = () => {
-            const newDate = new Date();
-            const date = newDate.getDate();
-            const month = newDate.getMonth() + 1;
-            const year = newDate.getFullYear();
-            const separator = '/';
-            const result = `${date}${separator}${month < 10 ? `0${month}` : `${month}`}${separator}${year}`;
-            return result;
-        };    
+         
 
         const modalRef =React.useRef();
         const modalWrapperRef = React.useRef();
@@ -32,28 +26,26 @@ const Modal = ({ setActiveModal, activeModal, setUserData, userData }) => {
         };
        
         const SaveData = (event) => {
-            setNewUser({
+            setNewProduct({
                 id:'',
-                avatar:event.target.form[4].value,
-                fullName:event.target.form[0].value,
-                userID:event.target.form[1].value,
-                email:event.target.form[3].value,
-                phone:event.target.form[2].value,
-                dateOfRegistry:currentDate(),
+                productLogo:event.target.form[1].value,
+                productName:event.target.form[0].value,
+                productDescription:event.target.form[2].value,
+                updatedTime:new Date(),
+                downloads:event.target.form[3].value
             }) 
         }   
         const handleSubmit = (event) => {
             setActiveModal(false);
             event.preventDefault();
-            setUserData([...userData, newUser]);
-            setNewUser({
+            setProduct([...product, newProduct]);
+            setNewProduct({
                 id:'',
-                avatar:'',
-                fullName:'',
-                userID:'',
-                email:'',
-                phone:'',
-                dateOfRegistry:''
+                productLogo:'',
+                productName:'',
+                productDescription:'',
+                updatedTime:'',
+                downloads:''
             });
         }
       
@@ -70,35 +62,30 @@ const Modal = ({ setActiveModal, activeModal, setUserData, userData }) => {
                          <div onClick={() => setActiveModal(false)}>
                          <BtnGoBack />
                          </div>
-                         <h2 className='modal__title'>Create a new user</h2>
-                         <span className='modal__subtitle'>Add main information about user</span>
+                         <h2 className='modal__title'>Create a new product</h2>
+                         <span className='modal__subtitle'>Add main information about product</span>
                              <form className='manage__form form' onSubmit = {(event) => handleSubmit(event)}>
                                      <label>
-                                         <span className='form__text'>Name</span>
+                                         <span className='form__text'>Product Name</span>
                                          <input required onChange = {(event) => SaveData(event)}
-                                          value={newUser.fullName} type='text' className='form__input' placeholder='Name'/>
+                                          value={newProduct.productName} type='text' className='form__input' placeholder='Type Product Name'/>
                                      </label>
                                      <label>
-                                         <span className='form__text'>ID Number</span>
+                                         <span className='form__text'>Product Logo</span>
                                          <input required onChange = {(event) => SaveData(event)}
-                                          value={newUser.userID} type='text' className='form__input' placeholder='ID Number'/>
+                                          value={newProduct.productLogo} type='text' className='form__input' placeholder='Type The Url to Image'/>
                                      </label>
                                      <label>
-                                         <span className='form__text'>Phone Number</span>
+                                         <span className='form__text'>Phone Description</span>
                                          <input required onChange = {(event) => SaveData(event)}
-                                          value={newUser.phone} type='text' className='form__input' placeholder='Phone Number'/>
+                                          value={newProduct.productDescription} type='text' className='form__input' placeholder='Type Product Description'/>
                                      </label>
                                      <label>
-                                         <span className='form__text'>Email</span>
+                                         <span className='form__text'>downloads</span>
                                          <input required onChange = {(event) => SaveData(event)}
-                                          value={newUser.email} type='email' className='form__input' placeholder='Email'/>
-                                     </label>
-                                     <label>
-                                         <span className='form__text'>Profile Picture</span>
-                                         <input required onChange = {(event) => SaveData(event)}
-                                          value={newUser.avatar} type='text' className='form__input' placeholder='Profile Picture'/>
-                                     </label>                                
-                                     <button type='submit' className='form__btn'>ADD NEW USER</button>
+                                          value={newProduct.downloads} type='text' className='form__input' placeholder='Type Downloads'/>
+                                     </label>                           
+                                     <button type='submit' className='form__btn'>ADD NEW PRODUCT</button>
                              </form>
                      </div>
 
