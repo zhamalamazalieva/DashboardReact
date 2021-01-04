@@ -27,7 +27,8 @@ const SearchForm = ({setSearchValue}) => {
           </button>
             <input className='search__input' 
                    placeholder='Search users by name, id'
-                   onChange={(e) => {handleInput(e)}}
+                   value={inputValue}
+                   onChange={(e) => handleInput(e)}
             />
         </form>
     )
