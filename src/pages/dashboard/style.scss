@@ -87,7 +87,6 @@
     }
     &__percent{
         @include font(12px, 500);
-        color: $color-red;
         margin:0 8px 0 15px;
         position: relative;
         &::before{
@@ -100,10 +99,20 @@
             height: 0;
             border-left:4px solid transparent;
             border-right: 4px solid transparent;
-            border-top: 8px solid red;
+            // border-top:4px solid $color-red;
+            
         }
-
+        &--up{
+            color: $color-green;   
+            &::before{
+                border-top: 4px solid $color-green;
+            }  
+       }
+        &--down{
+            color: $color-green
+        }
     }
+   
     &__month{
         @include font(12px);
         letter-spacing: -0.0428571px;
