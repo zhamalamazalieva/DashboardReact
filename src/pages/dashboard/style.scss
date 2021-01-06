@@ -2,6 +2,14 @@
 .dashboard{
     border-radius: 4px;
     margin-top: 64px;
+    &__item{
+        background-color: $color-white;
+        padding: 20px;
+        margin: 10px;
+    }
+    &__row{
+        margin: 0 -10px;
+    }
 }
 .top-card{
     &__column{
@@ -119,6 +127,70 @@
         color: $color-gray;
     }
    
+}
+.circle{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__chart{
+        width: 203px;
+        padding: 0;
+        height: 60%;
+        margin-bottom: 25px;
+    
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__title{
+        @include font(12px);
+        color: $color-gray;
+        margin: 10px 0;
+    }
+    &__percent{
+        @include font(29px,500);
+        margin-bottom: 61px;
+    }
+    &__hr{
+        margin: 0 -21px;
+        color: $color-lightGray;
+    }
+    &__footer{
+        border-top:1px solid $color-lightGray; 
+        margin: 0 -21px;
+        padding: 0 21px
+    }
+    &__filter, &__link{
+        @include font(14px,500);
+        color: $color-black;
+    }
+    &__filter{
+        position: relative;
+        cursor: pointer;
+        ul{
+            position: absolute;
+            bottom: 25px;
+            left: 0;
+            z-index: 1;
+            @include flex-center();
+            flex-direction: column;
+            background-color: $color-white;
+            box-shadow:0 0 5px 0 rgba($color: #000000, $alpha: .5);
+            border-radius: 4px;
+            padding: 5px 10px;
+
+       
+        }
+        li{
+            margin-top: 8px;
+        }
+    }
+    &__row{
+        padding: 10px 0 0 0;
+    }
 }
 
 @media screen and(max-width:1600px){

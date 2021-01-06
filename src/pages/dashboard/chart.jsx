@@ -2,17 +2,29 @@ import React from 'react'
 import { Bar } from '@reactchartjs/react-chart.js'
 
 const data = {
-  labels: ['1', '2', '3', '4', '5', '6'],
+  labels: ['1 Aug', '2 Aug', '3 Aug', '4 Aug', '5 Aug', '6 Aug'],
+
+
   datasets: [
+  
     {
       label: '# of Red Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: 'rgb(255, 99, 132)',
+      barPercentage: 14,
+      barThickness:15,
+      maxBarThickness: 8,
+      minBarLength: 2,
+      center:[30,30],
+      data: [12, 15, 16, 5, 5, 13],
+      backgroundColor: '#1665D8'
     },
     {
       label: '# of Blue Votes',
-      data: [2, 3, 20, 5, 1, 4],
-      backgroundColor: 'rgb(54, 162, 235)',
+      barPercentage: 0.5,
+      barThickness:15,
+      maxBarThickness: 8,
+      minBarLength: 2,
+      data: [8, 10, 17, 5, 8, 12],
+      backgroundColor: '#EDF0F2'
     },
    
   ],

@@ -65,3 +65,21 @@ export const CardsData = [
         income:true,
     }
 ]
+export const Days = ['7 days', 'Month', '1 Day'];
+export const ChartData = [
+    {
+        desktop:15,
+        tablet:55,
+        mobile:30
+    },
+    {
+        desktop:43,
+        tablet:27,
+        mobile:30
+    },
+    {
+        desktop:24,
+        tablet:38,
+        mobile:38
+    }
+]
