@@ -1,15 +1,15 @@
 import React from 'react';
 import { PieChart } from 'react-minimal-pie-chart';
-import {Days, ChartData} from './const';
+import {Days, CircleData} from './const';
 
 const CirclePieChart = () => {
-    const [percent, setPercent] = React.useState(ChartData[0])
+    const [percent, setPercent] = React.useState(CircleData[0])
     const [dayList, setDayList] = React.useState(false);
     const [dayItem, setDayItem] = React.useState(1);
     const handleClickActiveDays = () => setDayList (dayList ? false : true);
     const handleClickDayItem = (index) => {
         setDayItem(index)
-        setPercent(ChartData[index])
+        setPercent(CircleData[index])
     }
     
     return (

@@ -9,11 +9,15 @@ const Dashboard = () => {
             <div className='section-container'>
                <TopCards />
                 <div className='row dashboard__row'>
-                    <div className='col-9 dashboard__item'>
-                    <GroupedBar />
+                    <div className='col-9 dashboard__column'>
+                        <div className='dashboard__item'>
+                        <GroupedBar />
+                        </div>
                     </div>
-                    <div className='col-3 dashboard__item'>
-                    <CirclePieChart/>
+                    <div className='col-3 dashboard__column'>
+                        <div className='dashboard__item'>
+                        <CirclePieChart/>
+                        </div>
                     </div>
                 </div>
             </div>

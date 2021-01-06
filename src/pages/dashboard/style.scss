@@ -8,6 +8,8 @@
         margin: 10px;
     }
     &__row{
+        display: flex;
+        flex-wrap: wrap;
         margin: 0 -10px;
     }
 }
@@ -133,6 +135,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     &__chart{
         width: 203px;
         padding: 0;
@@ -199,6 +202,11 @@
             .top-card__column{
                 width:50%;
             }
+        }
+    }
+    .dashboard{
+        .col-9 .dashboard__column{
+            width: 100%;
         }
     }
 }

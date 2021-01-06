@@ -66,7 +66,7 @@ export const CardsData = [
     }
 ]
 export const Days = ['7 days', 'Month', '1 Day'];
-export const ChartData = [
+export const CircleData = [
     {
         desktop:15,
         tablet:55,
@@ -83,3 +83,4 @@ export const ChartData = [
         mobile:38
     }
 ]
+export const ChartData = [[12, 15, 16, 5, 5, 13], [8, 10, 17, 5, 8, 12], [20, 17, 12, 10, 5, 20]]
