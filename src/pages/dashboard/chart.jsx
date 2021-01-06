@@ -1,16 +1,11 @@
 import React from 'react'
 import { Bar } from '@reactchartjs/react-chart.js';
 import {Days, ChartData} from './const';
+import ListPopUp from './listPopUp';
 
 const GroupedBar = () => {
   const [arrayOfData , setArrayOfData] = React.useState(ChartData[0]);
-  const [dayList, setDayList] = React.useState(false);
-  const [dayItem, setDayItem] = React.useState(1);
-  const handleClickActiveDays = ()  => setDayList(dayList ? false : true)
-  const handleClickDayItem = (index) => {
-    setDayItem(index)
-    setArrayOfData(ChartData[index])
-  }
+ 
   const data = {
     labels: ['1 Aug', '2 Aug', '3 Aug', '4 Aug', '5 Aug', '6 Aug'],
     datasets: [
@@ -50,19 +45,7 @@ const GroupedBar = () => {
   }
  return (
   <>
-  <div className="circle__filter" onClick={handleClickActiveDays}>
-      <span>{Days[dayItem]} ago</span>
-      {dayList &&(
-        <ul className='circle__list'>
-        {Days.map((item, index) => {
-          return (
-            <li  onClick={() => handleClickDayItem(index)}>{item}</li>
-          )
-
-        })}
-      </ul>
-      )}
-  </div>
+  <ListPopUp setArrayOfData={setArrayOfData}/>
   <Bar data={data} options={options} />
   </>
  )

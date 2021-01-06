@@ -1,17 +1,10 @@
 import React from 'react';
 import { PieChart } from 'react-minimal-pie-chart';
 import {Days, CircleData} from './const';
+import ListPopUp from './listPopUp';
 
 const CirclePieChart = () => {
     const [percent, setPercent] = React.useState(CircleData[0])
-    const [dayList, setDayList] = React.useState(false);
-    const [dayItem, setDayItem] = React.useState(1);
-    const handleClickActiveDays = () => setDayList (dayList ? false : true);
-    const handleClickDayItem = (index) => {
-        setDayItem(index)
-        setPercent(CircleData[index])
-    }
-    
     return (
        <div className='circle'>
            
@@ -56,19 +49,7 @@ const CirclePieChart = () => {
            </div>
            <div className="circle__footer">
                <div className="circle__row row space-between">
-                   <div className="circle__filter" onClick= {handleClickActiveDays}>
-                        <span >{Days[dayItem]} ago</span>
-                       {dayList &&(
-                            <ul className="circle__list">
-                            {Days.map((item, index) => {
-                                    return(
-                                        <li onClick={() => handleClickDayItem(index)}>{item}</li>
-                                    )
-                                
-                            })}
-                        </ul>
-                       )}
-                   </div>
+                  <ListPopUp setPercent={setPercent}/>
                    <a href="#" className='circle__link'>Audience Devices</a>
                </div>
            </div>
