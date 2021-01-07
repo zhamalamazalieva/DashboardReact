@@ -15,7 +15,7 @@ const GroupedBar = () => {
         barPercentage: 14,
         barThickness:15,
         maxBarThickness: 8,
-        minBarLength: 2,
+        minBarLength: 10,
         center:[30,30],
         data: arrayOfData,
         backgroundColor: '#1665D8'
@@ -45,8 +45,13 @@ const GroupedBar = () => {
   }
  return (
   <>
+  <div className='column__row'>
+  <h3 className='column__title'>Users by device</h3>
   <ListPopUp setArrayOfData={setArrayOfData}/>
-  <Bar data={data} options={options} />
+  </div>
+  <Bar data={data} options={options} width={50}
+        height={20}
+        options={{ maintainAspectRatio: false }} />
   </>
  )
 }

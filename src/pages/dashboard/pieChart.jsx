@@ -7,8 +7,23 @@ const CirclePieChart = () => {
     const [percent, setPercent] = React.useState(CircleData[0])
     return (
        <div className='circle'>
-           
-            <PieChart  className='circle__chart'               
+         
+         <div className='circle__header'>
+                <div className="circle__row row space-between">
+                    <h3 className='column__title'>Users by device</h3>
+                    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8126 2C7.55898 2 4.91481 4.69 4.91481 8H7.8637L3.93185 12L0 8H2.94889C2.94889 3.58 6.46789 0 10.8126 0C12.3558 0 13.791 0.46 15 1.24L13.5649 2.7C12.749 2.25 11.8054 2 10.8126 2ZM14.1363 8L18.0682 4L22 8H19.0511C19.0511 12.42 15.5321 16 11.1874 16C9.64417 16 8.20904 15.54 7 14.76L8.43512 13.3C9.25098 13.75 10.1946 14 11.1874 14C14.441 14 17.0852 11.31 17.0852 8H14.1363Z" fill="#66788A"/>
+                    <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="16">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8126 2C7.55898 2 4.91481 4.69 4.91481 8H7.8637L3.93185 12L0 8H2.94889C2.94889 3.58 6.46789 0 10.8126 0C12.3558 0 13.791 0.46 15 1.24L13.5649 2.7C12.749 2.25 11.8054 2 10.8126 2ZM14.1363 8L18.0682 4L22 8H19.0511C19.0511 12.42 15.5321 16 11.1874 16C9.64417 16 8.20904 15.54 7 14.76L8.43512 13.3C9.25098 13.75 10.1946 14 11.1874 14C14.441 14 17.0852 11.31 17.0852 8H14.1363Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask0)">
+                    </g>
+                    </svg>
+
+                </div>
+            </div>
+           <div className='circle__middle'>
+           <PieChart  className='circle__chart'               
                 data={[
                 { title: 'One', value: percent.desktop, color: '#1070CA' },
                 { title: 'Two', value: percent.tablet, color: '#F7D154 '},
@@ -47,6 +62,9 @@ const CirclePieChart = () => {
                </div>
               </div>
            </div>
+        
+           </div>
+
            <div className="circle__footer">
                <div className="circle__row row space-between">
                   <ListPopUp setPercent={setPercent}/>

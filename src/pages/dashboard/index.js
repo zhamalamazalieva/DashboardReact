@@ -3,14 +3,17 @@ import TopCards from './topCards.jsx';
 import './style.scss';
 import GroupedBar from './chart';
 import CirclePieChart from './pieChart';
+import LatestProducts from './latestProduct'
 const Dashboard = () => {
     return (
         <section className='dashboard'>
             <div className='section-container'>
-               <TopCards />
                 <div className='row dashboard__row'>
+                    <div className='col-12 dashboard__column'>
+                    <TopCards />
+                    </div>
                     <div className='col-9 dashboard__column'>
-                        <div className='dashboard__item'>
+                        <div className='dashboard__item chart'>
                         <GroupedBar />
                         </div>
                     </div>
@@ -19,6 +22,16 @@ const Dashboard = () => {
                         <CirclePieChart/>
                         </div>
                     </div>
+                    <div className='col-3 dashboard__column'>
+                        <div className='dashboard__item'>
+                        <CirclePieChart/>
+                        </div>
+                    </div>
+                    <div className='col-9 dashboard__column'>
+                        <div className='dashboard__item'>
+                        <LatestProducts />
+                        </div>
+                    </div>          
                 </div>
             </div>
         </section>

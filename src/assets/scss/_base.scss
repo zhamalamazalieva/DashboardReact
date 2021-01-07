@@ -25,7 +25,7 @@ img {
 .section-container{
   padding: 24px;
 }
-.row,.column, .align-center, .space-between {
+.row,.column, .align-center, .space-between, .justify-center, .align-content {
   display: flex;
 }
 .column {
@@ -33,6 +33,13 @@ img {
 }
 .align-center {
   align-items: center;
+}
+.align-content{
+  flex-direction: column;
+  align-content: center;
+}
+.justify-center{
+  justify-content: center;
 }
 .space-between {
   justify-content: space-between;
@@ -57,6 +64,9 @@ img {
 }
 .col-10 {
   width: 83.34%;
+}
+.col-12{
+  width: 100%;
 }
 .btn {
   cursor: pointer;

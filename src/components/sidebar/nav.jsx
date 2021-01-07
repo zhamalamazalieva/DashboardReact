@@ -13,8 +13,10 @@ const Nav = () => {
                 {NavList.map((item, index) => {
                     return (
                         <li 
+                        key={item + index}
                         onClick = {() => {handleClick(index)}}
-                        className={`menu__item ${itemActive === index ? 'is-active' : ''}`}>
+                        className={`menu__item ${
+                            window.location.href.includes(item.link) ? 'is-active' : ''}`}>
             
                             <Link className='menu__link' to={item.link}>
                              {item.icon}
