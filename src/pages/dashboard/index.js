@@ -24,12 +24,11 @@ const Dashboard = () => {
                     </div>
                     <div className='col-3 dashboard__column'>
                         <div className='dashboard__item'>
-                        <CirclePieChart/>
+                        <LatestProducts />
                         </div>
                     </div>
                     <div className='col-9 dashboard__column'>
                         <div className='dashboard__item'>
-                        <LatestProducts />
                         </div>
                     </div>          
                 </div>

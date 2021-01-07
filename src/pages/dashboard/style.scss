@@ -1,15 +1,16 @@
 @import '../../index.scss';
+@import './latestProduct/style.scss';
 .dashboard{
     border-radius: 4px;
     margin-top: 64px;
     &__item{
         background-color: $color-white;
+        border-radius: 4px;
     
     }
     &__column{
         padding: 15px;
-    }
- 
+    } 
     &__row{
         display: flex;
         flex-wrap: wrap;
@@ -57,6 +58,12 @@
             .top-card__icon{
                 background-color: $color-blue;
             }
+            .top-card__percent {
+                color: $color-white;
+                &::before {
+                    border-top: 6px solid $color-white;
+                }
+            }
         }
     }
     &__margin{
@@ -102,28 +109,30 @@
         @include font(12px, 500);
         margin:0 8px 0 15px;
         position: relative;
-        &::before{
-            content:'';
-            position: absolute;
-            left: -15px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 0;
-            height: 0;
-            border-left:4px solid transparent;
-            border-right: 4px solid transparent;
-            // border-top:4px solid $color-red;
-            
-        }
-        &--up{
-            color: $color-green;   
-            &::before{
-                border-top: 4px solid $color-green;
-            }  
-       }
-        &--down{
-            color: $color-green
-        }
+        &::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: -10px;
+			width: 0;
+			height: 0;
+			border-left: 3px solid transparent;
+			border-right: 3px solid transparent;
+		}
+		&--up {
+			color: $color-green;
+			&::before {
+				border-top: 6px solid $color-green;
+				transform: translateY(-50%) rotate(180deg);
+			}
+		}
+		&--down {
+			color: $color-red;
+			&::before {
+				border-top: 6px solid $color-red;
+				transform: translateY(-50%);
+			}
+		}
     }
     &__month{
         @include font(12px);
@@ -136,7 +145,6 @@
     min-height: 300px;
     max-height: 400px;
     padding: 20px;
-
 }
 .circle{
     height: 100%;
@@ -153,8 +161,7 @@
         display: flex;
         flex-direction: column;
         padding: 10px;
-    }
-    
+    }    
     &__chart{
         width: 163px;
         padding: 0;
@@ -186,13 +193,41 @@
         margin: 0 -15px;
         padding: 10px 15px 15px;
     }
-    &__filter, &__link{
+    &__link{
         @include font(14px,500);
-        color: $color-black;
+        color: $color-blue;
     }
+    
     &__filter{
         position: relative;
         cursor: pointer;
+        margin-right: 15px;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 60%;
+            right: -15px;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+        }
+        &--up {
+			&::before {
+				border-top: 5px solid $color-gray;
+				transform: translateY(-60%) rotate(180deg);
+			}
+		}
+		&--down {
+			&::before {
+				border-top: 5px solid $color-gray;
+				transform: translateY(-60%) rotate(-90deg);
+			}
+        }
+        span{
+            @include font(14px, 500);
+            color: $color-black;
+        }
         ul{
             position: absolute;
             bottom: 25px;
@@ -204,15 +239,17 @@
             box-shadow:0 0 5px 0 rgba($color: #000000, $alpha: .5);
             border-radius: 4px;
             padding: 5px 10px;
-
-       
+          
         }
+       
+		
         li{
             margin-top: 8px;
         }
     }
     &__row{
         padding: 10px 0 0 0;
+        align-items: center;
     }
 }
 .column{
@@ -223,6 +260,12 @@
     &__title{
         @include font(16px, 500);
         color: $color-black;
+    }
+    &__subtitle{
+        @include font(12px, 400);
+        color: $color-gray;
+        margin-left: 15px;
+
     }
 }
 
@@ -238,5 +281,10 @@
         .col-9 .dashboard__column{
             width: 100%;
         }
+        .col-3 .dashboard__column{
+            width: 33.3%;
+        }
+        
+
     }
 }

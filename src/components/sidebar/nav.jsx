@@ -7,6 +7,18 @@ const Nav = () => {
     const handleClick = (index) => {
         setItemActive(index);
     };
+    
+  const handleWindowClick = (event) => {
+    if (event.path[0].pathname === '/products') {
+      const array = NavList.map((item) => item.link);
+      const result = array.indexOf(event.path[0].pathname);
+      setItemActive(result);
+    }
+  };
+
+  React.useEffect(() => {
+    document.addEventListener('click', handleWindowClick);
+  }, []);
     return (
         <nav className='sidebar__nav nav'>
             <ul className='nav__menu'>

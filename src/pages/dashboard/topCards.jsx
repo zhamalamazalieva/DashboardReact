@@ -19,7 +19,7 @@ const TopCards = () => {
                                     <span className='top-card__progressbar'></span>
                                 ): (
                                     <div>
-                                      <span className={`top-card__percent ${item.income ? 'top-card__persent--up' : 'top-card__persent--down'}`}>{item.percent}%</span>
+                                      <span className={`top-card__percent ${item.income ? 'top-card__percent--up' : 'top-card__percent--down'}`}>{item.percent}%</span>
                                       <span className="top-card__month">Since last month</span>
                                     </div>
                                 )}

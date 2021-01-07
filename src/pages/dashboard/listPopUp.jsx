@@ -1,37 +1,46 @@
-import React from 'react';
-import {Days, ChartData, CircleData} from './const';
+import React from "react";
+import { Days, ChartData, CircleData } from "./const";
 
-const ListPopUp = ({setPercent, setArrayOfData}) => {
-    const [dayList, setDayList] = React.useState(false);
-    const [dayItem, setDayItem] = React.useState(1);
-    const handleClickActiveDays = () => setDayList (dayList ? false : true);
-    const handleClickDayItem = (index) => {
-        setDayItem(index)
-        if (ChartData){
-            setPercent(CircleData[index])
-        }
-        if (CircleData){
-            setArrayOfData(ChartData[index])
-
-        }
+const ListPopUp = ({ setPercent, setArrayOfData }) => {
+  const [dayList, setDayList] = React.useState(false);
+  const [dayItem, setDayItem] = React.useState(1);
+  const popUpRef = React.useRef();
+  const handleClickOutside = (event) => {
+    if (!event.path.includes(popUpRef.current)) {
+      setDayList(false);
     }
-    return (
-        
-             <div className="circle__filter" onClick= {handleClickActiveDays}>
-                        <span >{Days[dayItem]} ago</span>
-                       {dayList &&(
-                            <ul className="circle__list">
-                            {Days.map((item, index) => {
-                                    return(
-                                        <li onClick={() => handleClickDayItem(index)}>{item}</li>
-                                    )
-                                
-                            })}
-                        </ul>
-                       )}
-                   </div>
-    
-    )
-}
+  };
+  const handleClickActiveDays = () => setDayList(dayList ? false : true);
+  const handleClickDayItem = (index) => {
+    setDayItem(index);
+    if (ChartData) {
+      setPercent(CircleData[index]);
+    }
+    if (CircleData) {
+      setArrayOfData(ChartData[index]);
+    }
+  };
+  React.useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+  }, []);
+  return (
+    <div
+      ref={popUpRef}
+      onClick={handleClickActiveDays}
+      className={`circle__filter ${
+        dayList ? "circle__filter--up" : "circle__filter--down"
+      }`}
+    >
+      <span>{Days[dayItem]} ago</span>
+      {dayList && (
+        <ul>
+          {Days.map((item, index) => {
+            return <li onClick={() => handleClickDayItem(index)}>{item}</li>;
+          })}
+        </ul>
+      )}
+    </div>
+  );
+};
 
 export default ListPopUp;
