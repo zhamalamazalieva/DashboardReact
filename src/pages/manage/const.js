@@ -14,28 +14,27 @@ export const columns = [
     {
       field: 'userID',
       headerName: 'User ID',
-      type: 'number',
-      width: 130,
+      width: 150,
     },
     {
       field: 'email',
       headerName: 'Email Address',
       description: 'This column has a value getter and is not sortable.',
-      width: 200,
+      width: 210,
 
     },
     {
       field: 'phone',
       headerName: 'Phone Number',
       description: 'This column has a value getter and is not sortable.',
-      width: 200,
+      width: 210,
 
     },
     {
       field: 'dateOfRegistry',
       headerName: 'Account created',
       description: 'This column has a value getter and is not sortable.',
-      width: 200,
+      width: 210,
 
     },
   ];

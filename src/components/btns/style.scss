@@ -6,6 +6,8 @@
     transition: .3s;
     padding: 10px 15px;
     box-shadow: 0 1px 3px 0 rgba($color: $color-black, $alpha: .2);
+    display: flex;
+    align-items: center;
 }
 .btn-goBack{
     display: flex;
@@ -24,13 +26,14 @@
     span{
         @include font(14px);
         color: $color-gray;
+        transition: 0.3s;      
     }
     &:hover{
         svg{
-        fill:$color-black;
+        fill:$color-blue;
         }
         span{
-        color:$color-black;
+        color:$color-blue;
         }
     }
 }
@@ -53,7 +56,6 @@
         margin-right: 8px;
         fill:$color-gray;
     }
-  
 }
 .btn-add{
     background-color: $color-blue;
@@ -71,4 +73,12 @@
             fill:$color-blue;
         }
     }
+}
+.btn-submit{
+    width: 100%;
+    @include font (16px, 500);
+    color: $color-white;
+    background-color: $color-blue;
+    text-transform: uppercase;
+    @include flex-center();
 }

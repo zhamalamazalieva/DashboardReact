@@ -1,27 +1,49 @@
-import React from  'react';
-import '../../components/search_form/style.scss';
-const SearchForm = ({setSearchValue}) => {
-    const [inputValue, setInputValue] = React.useState('');
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import InputBase from "@material-ui/core/InputBase";
+import IconButton from "@material-ui/core/IconButton";
+import SearchIcon from "@material-ui/icons/Search";
 
-    const handleInput = (event) => {
-      setInputValue(event.target.value);
-      setSearchValue(event.target.value);
-    };
-  
-    return (
-        <form  className="search__form row">
-          <button className="search__btn">
-          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="17" height="17">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.3819 10.6918H12.1498L17 15.5517L15.5517 17L10.6918 12.1498V11.3819L10.4294 11.1098C9.32133 12.0623 7.88279 12.6358 6.3179 12.6358C2.82847 12.6358 0 9.80732 0 6.3179C0 2.82847 2.82847 0 6.3179 0C9.80732 0 12.6358 2.82847 12.6358 6.3179C12.6358 7.88279 12.0623 9.32133 11.1098 10.4294L11.3819 10.6918ZM2 6.5C2 8.99 4.01 11 6.5 11C8.99 11 11 8.99 11 6.5C11 4.01 8.99 2 6.5 2C4.01 2 2 4.01 2 6.5Z"/>
-            </mask>
-            <g mask="url(#mask0)">
-            <rect x="-3" y="-3" width="24" height="24" />
-            </g>
-            </svg>
-          </button>
-            <input value={inputValue} onChange={(e) => handleInput(e)} className='search__input' placeholder='Search users by name, id'/>
-        </form>
-    )
+const SearchForm = ({ setSearchValue }) => {
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      padding: "2px 4px",
+      display: "flex",
+      alignItems: "center",
+      width: 600,
+      height: 38,
+    },
+    input: {
+      marginLeft: theme.spacing(1),
+      flex: 1,
+    },
+    iconButton: {
+      padding: 10,
+    },
+  }));
+  const classes = useStyles();
+  const [inputValue, setInputValue] = React.useState("");
+  const handleInput = (event) => {
+    setSearchValue(event.target.value);
+    setInputValue(event.target.value);
+  };
+
+  return (
+    <Paper component="form" className={classes.root}>
+      <IconButton
+        type="submit"
+        className={classes.iconButton}
+        aria-label="search"
+      >
+        <SearchIcon />
+      </IconButton>
+      <InputBase
+        onChange={(event) => handleInput(event)}
+        className={classes.input}
+        placeholder="Search users by name, id"
+      />
+    </Paper>
+  );
 };
 export default SearchForm;
