@@ -1,18 +1,18 @@
-import React from 'react';
-import {BtnGoBack} from '../../components/btns';
-import distanseInWordsToNow from 'date-fns/distance_in_words_to_now';
-import ruLocale from 'date-fns/locale/ru';
-import enLocale from 'date-fns/locale/en';
+import React from "react";
+import {BtnGoBack} from "../../components/btns";
+import distanseInWordsToNow from "date-fns/distance_in_words_to_now";
+import ruLocale from "date-fns/locale/ru";
+import enLocale from "date-fns/locale/en";
 
 const Modal = ({ setActiveModal, activeModal, setProduct, product }) => {
 
         const [newProduct, setNewProduct] =React.useState({
-            id:'',
-            productLogo:'',
-            productName:'',
-            productDescription:'',
-            updatedTime:'',
-            downloads:''
+            id:"",
+            productLogo:"",
+            productName:"",
+            productDescription:"",
+            updatedTime:"",
+            downloads:""
         });    
          
 
@@ -27,7 +27,7 @@ const Modal = ({ setActiveModal, activeModal, setProduct, product }) => {
        
         const SaveData = (event) => {
             setNewProduct({
-                id:'',
+                id:"",
                 productLogo:event.target.form[1].value,
                 productName:event.target.form[0].value,
                 productDescription:event.target.form[2].value,
@@ -40,58 +40,58 @@ const Modal = ({ setActiveModal, activeModal, setProduct, product }) => {
             event.preventDefault();
             setProduct([...product, newProduct]);
             setNewProduct({
-                id:'',
-                productLogo:'',
-                productName:'',
-                productDescription:'',
-                updatedTime:'',
-                downloads:''
+                id:"",
+                productLogo:"",
+                productName:"",
+                productDescription:"",
+                updatedTime:"",
+                downloads:""
             });
         }
       
         React.useEffect(() => {
             if (modalWrapperRef.current){
-                modalWrapperRef.current.addEventListener('click', handleClickOutside);
+                modalWrapperRef.current.addEventListener("click", handleClickOutside);
             }}, [activeModal]);
 
     return (
 
-            <div ref={modalWrapperRef} className='modal__wrapper'>
-                <div ref={modalRef} className='modal'>
-                     <div className='col-6 modal__left'>
+            <div ref={modalWrapperRef} className="modal__wrapper">
+                <div ref={modalRef} className="modal">
+                     <div className="col-6 modal__left">
                          <div onClick={() => setActiveModal(false)}>
                          <BtnGoBack />
                          </div>
-                         <h2 className='modal__title'>Create a new product</h2>
-                         <span className='modal__subtitle'>Add main information about product</span>
-                             <form className='manage__form form' onSubmit = {(event) => handleSubmit(event)}>
+                         <h2 className="modal__title">Create a new product</h2>
+                         <span className="modal__subtitle">Add main information about product</span>
+                             <form className="manage__form form" onSubmit = {(event) => handleSubmit(event)}>
                                      <label>
-                                         <span className='form__text'>Product Name</span>
+                                         <span className="form__text">Product Name</span>
                                          <input required onChange = {(event) => SaveData(event)}
-                                          value={newProduct.productName} type='text' className='form__input' placeholder='Type Product Name'/>
+                                          value={newProduct.productName} type="text" className="form__input" placeholder="Type Product Name"/>
                                      </label>
                                      <label>
-                                         <span className='form__text'>Product Logo</span>
+                                         <span className="form__text">Product Logo</span>
                                          <input required onChange = {(event) => SaveData(event)}
-                                          value={newProduct.productLogo} type='text' className='form__input' placeholder='Type The Url to Image'/>
+                                          value={newProduct.productLogo} type="text" className="form__input" placeholder="Type The Url to Image"/>
                                      </label>
                                      <label>
-                                         <span className='form__text'>Phone Description</span>
+                                         <span className="form__text">Phone Description</span>
                                          <input required onChange = {(event) => SaveData(event)}
-                                          value={newProduct.productDescription} type='text' className='form__input' placeholder='Type Product Description'/>
+                                          value={newProduct.productDescription} type="text" className="form__input" placeholder="Type Product Description"/>
                                      </label>
                                      <label>
-                                         <span className='form__text'>downloads</span>
+                                         <span className="form__text">downloads</span>
                                          <input required onChange = {(event) => SaveData(event)}
-                                          value={newProduct.downloads} type='text' className='form__input' placeholder='Type Downloads'/>
+                                          value={newProduct.downloads} type="text" className="form__input" placeholder="Type Downloads"/>
                                      </label>                           
-                                     <button type='submit' className='form__btn'>ADD NEW PRODUCT</button>
+                                     <button type="submit" className="form__btn">ADD NEW PRODUCT</button>
                              </form>
                      </div>
 
-                     <div className='col-6  modal__right'>
-                         <div className='modal__background'>
-                         <div className='modal__logo'>
+                     <div className="col-6  modal__right">
+                         <div className="modal__background">
+                         <div className="modal__logo">
                          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 18.1065C0 27.9411 8.05887 36 18.1065 36C27.9411 36 36 27.9411 36 18.1065C36 8.05887 27.9411 0 18.1065 0C8.05887 0 0 8.05887 0 18.1065ZM33.7263 18.1065C33.7263 26.6854 26.6854 33.7263 18.1065 33.7263C9.34353 33.7263 2.27368 26.714 2.27368 18.1065C2.27368 9.3146 9.3146 2.27368 18.1065 2.27368C26.714 2.27368 33.7263 9.34353 33.7263 18.1065Z" fill="white"/>
                              <path fill-rule="evenodd" clip-rule="evenodd" d="M16.4288 13.5917C16.7107 13.359 17.0649 13.2318 17.4305 13.2318C17.7922 13.2318 18.1429 13.3564 18.4235 13.5846L22.6335 17.0082C23.0074 17.3123 23.5156 17.3923 23.9648 17.218L25.9502 16.4474C26.1292 16.3779 26.3302 16.4036 26.4851 16.517C27.0788 16.9516 28.5751 18.0497 29.1289 18.482C30.4861 19.5416 31.486 20.25 31.486 20.25C31.486 20.25 31.4686 19.8601 31.486 19.4401C31.846 10.718 25.2324 4.39017 17.8022 4.50144C10.3803 4.61568 4.38132 10.5662 4.50178 18.8354C4.51309 19.5319 4.6193 20.25 4.6193 20.25L6.50953 18.8354L8.80622 17.1806C9.12242 16.9528 9.54513 16.9393 9.87525 17.1464L10.7991 17.7261C11.0088 17.8577 11.2793 17.8402 11.4703 17.6826L16.4288 13.5917Z" fill="white"/>

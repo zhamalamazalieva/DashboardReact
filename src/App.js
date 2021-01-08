@@ -17,19 +17,15 @@ function App() {
           <div className='col-2'>
           <Sidebar />
           </div>
-          <div className='column col-10'>
+          <div className='col-10'>
             <div className='pages'>
             <Route exact path='/dashboard' component={Dashboard}/>
             <Route exact path='/users' component={Manage}/>
             <Route exact path='/products' component={Products}/>
             </div>
-           
+          </div>
         </div>
-
-        </div>
-
         <Footer />
-
     </div>
   );
 }

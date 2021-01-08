@@ -3,11 +3,12 @@
      {
     "id": 0,
     "avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png",
-       "fullName": "Атабек Курманов",
+       "fullName": "Атабек Курбанов",
        "userID": "JS0000152",
        "email": "rsnyder@blogspan.gov",
     "phone": "1-(618)312-3065",
-    "dateOfRegistry": "04/28/2018"
+    "dateOfRegistry": "04/28/2018",
+    "status":"Delivered"
    },
    {
     "id": 1,
@@ -16,7 +17,9 @@
        "userID": "JS0000153",
        "email": "rsnyder@blogspan.gov",
     "phone": "1-(618)312-3065",
-    "dateOfRegistry": "04/28/2018"
+    "dateOfRegistry": "04/28/2018",
+    "status":"Pending"
+
    },
    {
     "id": 2,
@@ -25,7 +28,9 @@
        "userID": "JS0000153",
        "email": "rsnyder@blogspan.gov",
     "phone": "1-(618)312-3065",
-    "dateOfRegistry": "09/01/2020"
+    "dateOfRegistry": "09/01/2020",
+    "status":"Delivered"
+
    },
    {
     "id": 3,
@@ -34,7 +39,9 @@
        "userID": "JS0000154",
        "email": "rsnyder@blogspan.gov",
     "phone": "1-(618)312-3065",
-    "dateOfRegistry": "04/28/2018"
+    "dateOfRegistry": "04/28/2018",
+    "status":"Refund"
+
    },
    {
     "id": 4,
@@ -43,7 +50,9 @@
        "userID": "JS0000155",
        "email": "rsnyder@blogspan.gov",
     "phone": "1-(618)312-3065",
-    "dateOfRegistry": "04/05/2015"
+    "dateOfRegistry": "04/05/2015",
+    "status":"Pending"
+
    },
    {
     "id": 5,
@@ -52,7 +61,9 @@
        "userID": "JS0000156",
        "email": "rsnyder@blogspan.gov",
     "phone": "1-(618)312-3065",
-    "dateOfRegistry": "02/23/2018"
+    "dateOfRegistry": "02/23/2018",
+    "status":"Delivered"
+
      },
      {
         "id": 6,
@@ -61,8 +72,22 @@
            "userID": "JS0000157",
            "email": "rsnyder@blogspan.gov",
         "phone": "1-(618)312-3065",
-        "dateOfRegistry": "12/23/2016"
-         }
+        "dateOfRegistry": "12/23/2016",
+        "status":"Pending"
+
+
+         },
+         {
+            "id": 6,
+            "avatar": "https://www.pngkey.com/png/detail/55-556528_pic-avatars-for-jira-star-wars.png",
+               "fullName": "Эралы Мырзакеримов",
+               "userID": "JS0000158",
+               "email": "rsnyder@blogspan.gov",
+            "phone": "1-(618)312-3065",
+            "dateOfRegistry": "12/23/2019",
+            "status":"Delivered"
+
+             }
   ],	
    "products": [{
      "id": 0,

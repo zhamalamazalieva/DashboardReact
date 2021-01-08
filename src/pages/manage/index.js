@@ -18,7 +18,7 @@ export default function Manage() {
 
   React.useEffect(async () => {
       await axios
-        .get(`http://localhost:3000/database.json`)
+        .get(`http://localhost:3001/database.json`)
         .then((response) => response)
         .then(({data}) => setUserData(data.users));
         }, []);
@@ -42,17 +42,17 @@ export default function Manage() {
                 <BtnAdd />
             </div>
           </div>
-          <div style={{ height: 500, width: '100%', backgroundColor:'white'}} className='users'>
-            <TableData 
+          <div className='users'
+          style={{ height: 450, width: '100%', background: 'white', borderRadius: '4px' }}>
+          <TableData
             users={userData.filter((item) => {
-              if (searchValue === ''){
+              if (searchValue === '') {
                 return item;
-              }
-              else if (item.fullName.toLowerCase().includes(searchValue.toLowerCase())){
+              } else if (item.fullName.toLowerCase().includes(searchValue.toLowerCase())) {
                 return item;
               }
             })}
-             />
+          />
           </div>
     </section>
   );

@@ -15,7 +15,7 @@ const Products = () => {
 
   React.useEffect(() => {
     axios
-      .get("http://localhost:3000/database.json")
+      .get("http://localhost:3001/database.json")
       .then((response) => {
         console.log(response);
         return response.data.products;

@@ -8,7 +8,7 @@ const LatestProducts = () => {
 
     React.useEffect (() => {
         
-        fetch(`http://localhost:3000/database.json`)
+        fetch(`http://localhost:3001/database.json`)
         .then((response) => response.json())
         .then((data) => data.products)
         .then((item) => setProducts(item)) 

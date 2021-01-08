@@ -4,7 +4,7 @@ import { DataGrid } from '@material-ui/data-grid';
 const TableData = ({users}) => {
     return (
         <React.Fragment>
-        <DataGrid rows={users} columns={columns} pageSize={6}  />
+        <DataGrid rows={users} columns={columns} pageSize={4}  />
      </React.Fragment>
     )
 }
