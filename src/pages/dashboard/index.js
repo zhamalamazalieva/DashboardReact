@@ -3,7 +3,8 @@ import TopCards from './topCards.jsx';
 import './style.scss';
 import GroupedBar from './chart';
 import CirclePieChart from './pieChart';
-import LatestProducts from './latestProduct'
+import LatestProducts from './latestProduct';
+import LatestOrders from './latestOrders'
 const Dashboard = () => {
     return (
         <section className='dashboard'>
@@ -29,6 +30,7 @@ const Dashboard = () => {
                     </div>
                     <div className='col-9 dashboard__column'>
                         <div className='dashboard__item'>
+                        <LatestOrders/>
                         </div>
                     </div>          
                 </div>

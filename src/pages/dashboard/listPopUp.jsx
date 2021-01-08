@@ -13,11 +13,11 @@ const ListPopUp = ({ setPercent, setArrayOfData }) => {
   const handleClickActiveDays = () => setDayList(dayList ? false : true);
   const handleClickDayItem = (index) => {
     setDayItem(index);
-    if (ChartData) {
-      setPercent(CircleData[index]);
-    }
-    if (CircleData) {
-      setArrayOfData(ChartData[index]);
+    if (ChartData && setArrayOfData) {
+        setArrayOfData(ChartData[index]);
+      }
+    if (CircleData && setPercent) {
+        setPercent(CircleData[index]);
     }
   };
   React.useEffect(() => {
