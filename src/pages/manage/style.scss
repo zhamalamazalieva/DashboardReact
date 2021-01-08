@@ -1,7 +1,6 @@
 @import '../../index.scss';
 .manage{
-    margin-top: 80px;
-    padding:24px;
+    margin-top: 60px;
     .users{
         height: 450px;
         width: 100%;
@@ -25,9 +24,9 @@
         flex-wrap: nowrap;
         width: 60%;
         position: fixed;
-        top:15%;
+        top:50%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         background-color: $color-white;
         &__wrapper{
             position: fixed;
@@ -83,26 +82,21 @@
         margin-top: 40px;
         display: flex;
         flex-direction: column;
-        background-color: $color-white;          
         &__input{
             min-height: 35px;
             width:100%;
             border-radius: 4px;
-            outline: none;
             border: 1px solid $color-gray;
             padding: 5px 15px;
             @include font(16px);
             color: $color-gray;
             &:focus{
-                border: 2px solid $color-blue !important;
-                
+                outline-color:$color-blue ;      
             }
             &::placeholder{
                 @include font(14px);
                 color: $color-gray;
             }
-
-
         }
         label{
             position: relative;
@@ -120,6 +114,8 @@
             }
             input:focus + span{
                    opacity: 1;
+                   padding-top: 0;
+
             }
         }
 

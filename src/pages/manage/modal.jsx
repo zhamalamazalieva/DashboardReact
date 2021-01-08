@@ -1,5 +1,5 @@
 import React from "react";
-import { BtnGoBack, BtnSubmit } from "../../components/btns";
+import { BtnGoBack, BtnAddUser } from "../../components/btns";
 
 const Modal = ({ setActiveModal, activeModal, setUserData, userData }) => {
   const [newUser, setNewUser] = React.useState({
@@ -134,7 +134,7 @@ const Modal = ({ setActiveModal, activeModal, setUserData, userData }) => {
                 placeholder="Profile Picture"
               />
             </label>
-            <BtnSubmit/>
+            <BtnAddUser/>
           </form>
         </div>
 

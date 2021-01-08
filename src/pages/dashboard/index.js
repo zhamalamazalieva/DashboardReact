@@ -1,7 +1,7 @@
 import React from 'react';
-import TopCards from './topCards.jsx';
+import Cards from './cards';
 import './style.scss';
-import GroupedBar from './chart';
+import GroupedBar from './verticalChart';
 import CirclePieChart from './pieChart';
 import LatestProducts from './latestProduct';
 import LatestOrders from './latestOrders'
@@ -11,7 +11,7 @@ const Dashboard = () => {
             <div className='section-container'>
                 <div className='row dashboard__row'>
                     <div className='col-12 dashboard__column'>
-                    <TopCards />
+                    <Cards />
                     </div>
                     <div className='col-9 dashboard__column'>
                         <div className='dashboard__item chart'>

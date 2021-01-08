@@ -10,6 +10,7 @@ export const CardsData = [
         <rect x="-3" y="-5" width="36" height="36" fill="white"/>
         </g>
         </svg>
+        
         ),
         percent:'12',
         progressBar:false, 

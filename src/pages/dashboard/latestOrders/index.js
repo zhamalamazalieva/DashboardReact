@@ -7,7 +7,7 @@ const LatestOrders = () => {
     React.useEffect(async ()=>
     {
         await axios
-        .get(`http://localhost:3001/database.json`)
+        .get(`http://localhost:3002/database.json`)
         .then((response) => response)
         .then(({data}) => setUserData(data.users));
         }, []);

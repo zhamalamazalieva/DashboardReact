@@ -35,8 +35,13 @@ export const BtnAdd = () => {
         </button>
     )
 }
-export const BtnSubmit = () => {
+export const BtnAddUser = () => {
     return(
         <button className="btn btn-submit">add new user</button>
+    )
+}
+export const BtnAddProduct = () => {
+    return(
+        <button className="btn btn-submit">add new product</button>
     )
 }

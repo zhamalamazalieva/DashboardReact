@@ -1,0 +1,124 @@
+.top-card{
+    &__column{
+        width: 25%;
+        &:nth-child(2){
+            .top-card__icon{
+                background-color: $color-green;
+            }
+        }
+        &:nth-child(3){
+            .top-card__icon{
+                background-color: $color-blue;
+            }
+            .top-card__progressbar{
+                background-color: $color-lightGray;
+                height: 4px;
+                width: 100%;
+                border-radius: 3px;
+                position: relative;
+                display: block;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background-color: $color-blue;
+                    width: 75%;
+                    height: 100%;
+                    border-radius: 3px;
+                }
+            }
+        }
+        &:nth-child(4){
+            .top-card__item{
+                background-color: $color-blue;
+            }
+            .top-card__suptitle, .top-card__title, .top-card__month, .top-card__percent{
+                color: $color-white;
+            }
+            .top-card__icon{
+                background-color: $color-blue;
+            }
+            .top-card__percent {
+                color: $color-white;
+                &::before {
+                    border-top: 6px solid $color-white;
+                }
+            }
+        }
+    }
+    &__margin{
+        padding: 15px;
+
+    }
+    &__item{
+        background-color: $color-white;
+        padding: 20px 24px 30px 24px;
+        min-height: 100%;
+        border-radius: 4px;
+        box-shadow: 0 0 1px 0 rgba($color: #000000, $alpha: 1.0);
+    }
+   &__row{
+        margin: -15px;
+        flex-wrap: wrap;
+    }
+    &__flex{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__icon{
+        @include flex-center();
+        width: 63px;
+        height: 63px;
+        border-radius: 50%;
+        background-color: $color-red;
+    }
+    &__suptitle{
+        @include font(12px, 700);
+        letter-spacing: 0.996px;
+        text-transform: uppercase;
+        color: $color-gray;
+    }
+    &__title{
+        @include font(24px, 500);
+        letter-spacing: -0.6px;
+        text-transform: uppercase;
+        margin-top: 8px;
+        margin-bottom: 42px;
+    }
+    &__percent{
+        @include font(12px, 500);
+        margin:0 8px 0 15px;
+        position: relative;
+        &::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: -10px;
+			width: 0;
+			height: 0;
+			border-left: 3px solid transparent;
+			border-right: 3px solid transparent;
+		}
+		&--up {
+			color: $color-green;
+			&::before {
+				border-top: 6px solid $color-green;
+				transform: translateY(-50%) rotate(180deg);
+			}
+		}
+		&--down {
+			color: $color-red;
+			&::before {
+				border-top: 6px solid $color-red;
+				transform: translateY(-50%);
+			}
+		}
+    }
+    &__month{
+        @include font(12px);
+        letter-spacing: -0.0428571px;
+        color: $color-gray;
+    }
+   
+}

@@ -15,7 +15,7 @@ const Products = () => {
 
   React.useEffect(() => {
     axios
-      .get("http://localhost:3001/database.json")
+      .get("http://localhost:3000/database.json")
       .then((response) => {
         console.log(response);
         return response.data.products;
@@ -25,34 +25,37 @@ const Products = () => {
 
   return (
     <section className="products">
-       {activeModal && <Modal setProduct={setProducts} product={products1} setActiveModal={setActiveModal} />}
-        <div className='section-container'>
+      <div className='section-container'>
+        {activeModal &&
+        <Modal 
+        setProduct={setProducts}
+        product={products1}
+        setActiveModal={setActiveModal} />}
         <ProductsTop />
-      <div className="space-between">
-        <SearchForm setSearchValue={setSearchValue} />
-        <div  onClick={()=> setActiveModal(true) }>
-        <BtnNewProduct/>
+        <div className="space-between">
+          <SearchForm setSearchValue={setSearchValue} />
+          <div  onClick={()=> setActiveModal(true) }>
+          <BtnNewProduct/>
+          </div>        
         </div>
-       
-      </div>
-      <div>
-      <div className="row products__row">
-        {products1
-          .filter((item) => {
-            if (searchValue === "") {
-              return item;
-            } else if (
-              item.productName.toLowerCase().includes(searchValue.toLowerCase())
-            ) {
-              return item;
-            }
-          })
-          .map((item) => (
-            <ProductsItem item={item} />
-          ))}
-          </div>
-      </div>
+        <div>
+        <div className="row products__row">
+          {products1
+            .filter((item) => {
+              if (searchValue === "") {
+                return item;
+              } else if (
+                item.productName.toLowerCase().includes(searchValue.toLowerCase())
+              ) {
+                return item;
+              }
+            })
+            .map((item) => (
+              <ProductsItem item={item} />
+            ))}
+            </div>
         </div>
+      </div>
     </section>
   );
 };
