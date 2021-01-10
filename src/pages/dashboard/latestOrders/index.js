@@ -7,15 +7,23 @@ const LatestOrders = () => {
     React.useEffect(async ()=>
     {
         await axios
-        .get(`http://localhost:3002/database.json`)
+        .get(`http://localhost:3000/database.json`)
         .then((response) => response)
         .then(({data}) => setUserData(data.users));
         }, []);
 
     return (
-        <div style={{ height: 400, width: "100%", backgroundColor:"white"}}>
+       <div className="latest-order">
+       <div className="latest-order__header">
+
+        <h3 className="column__title">Latest Products</h3>
+        <span className="column__subtitle">5 in total</span>
+  
+       </div>
+        <div className="latest-order__order order" style={{ height:450, width: "100%"}}>
             <TableData users={userData} />
         </div>
+       </div>
     )
 }
 

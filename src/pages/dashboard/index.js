@@ -1,6 +1,6 @@
 import React from 'react';
-import Cards from './cards';
 import './style.scss';
+import Cards from './cards';
 import GroupedBar from './verticalChart';
 import CirclePieChart from './pieChart';
 import LatestProducts from './latestProduct';

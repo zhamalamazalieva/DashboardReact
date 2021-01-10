@@ -1,7 +1,7 @@
 import React from 'react';
 import { PieChart } from 'react-minimal-pie-chart';
-import {Days, CircleData} from './const';
-import ListPopUp from './listPopUp';
+import {Days, CircleData} from '../const';
+import ListPopUp from "../listPopUP";
 
 const CirclePieChart = () => {
     const [percent, setPercent] = React.useState(CircleData[0])

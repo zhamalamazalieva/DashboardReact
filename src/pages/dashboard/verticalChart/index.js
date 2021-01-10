@@ -1,7 +1,7 @@
 import React from "react";
 import { Bar } from "@reactchartjs/react-chart.js";
 import { Days, ChartData } from "../const";
-import ListPopUp from "../listPopUp";
+import ListPopUp from "../listPopUP";
 
 const GroupedBar = () => {
   const [arrayOfData, setArrayOfData] = React.useState(ChartData[0]);

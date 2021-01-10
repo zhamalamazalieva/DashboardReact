@@ -1,5 +1,5 @@
 import React from "react";
-import { Days, ChartData, CircleData } from "./const";
+import { Days, ChartData, CircleData } from "../const";
 
 const ListPopUp = ({ setPercent, setArrayOfData }) => {
   const [dayList, setDayList] = React.useState(false);

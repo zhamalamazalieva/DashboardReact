@@ -3,7 +3,8 @@
 @import './latestOrders/style.scss';
 @import './cards/style.scss';
 @import './verticalChart/style.scss';
-
+@import './pieChart/style.scss';
+@import './listPopUp/style.scss';
 
 .dashboard{
     border-radius: 4px;
@@ -11,6 +12,8 @@
     &__item{
         background-color: $color-white;
         border-radius: 4px;
+        max-height:545px;
+        min-height: 545px;
     
     }
     &__column{
@@ -24,128 +27,8 @@
 }
 
 
-.circle{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0 15px;
-    &__header{
-        border-bottom:1px solid $color-lightGray; 
-        margin: 0 -15px 20px;
-        padding: 10px 15px 15px;
-    }
-    &__middle{
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-    }    
-    &__chart{
-        width: 163px;
-        padding: 0;
-        height: 60%;
-        margin-bottom: 25px;
-        margin: auto;
-    
-    }
-    &__item{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 24px;}
-    &__title{
-        @include font(12px);
-        color: $color-gray;
-        margin: 10px 0;
-    }
-    &__percent{
-        @include font(29px,500);
-        margin-bottom: 61px;
-    }
-    &__hr{
-        margin: 0 -21px;
-        color: $color-lightGray;
-    }
-    &__footer{
-        border-top:1px solid $color-lightGray; 
-        margin: 0 -15px;
-        padding: 10px 15px 15px;
-    }
-    &__link{
-        @include font(14px,500);
-        color: $color-blue;
-    }
-    
-    &__filter{
-        position: relative;
-        cursor: pointer;
-        margin-right: 15px;
-        &::before {
-            content: "";
-            position: absolute;
-            top: 60%;
-            right: -15px;
-            width: 0;
-            height: 0;
-            border-left: 4px solid transparent;
-            border-right: 4px solid transparent;
-        }
-        &--up {
-			&::before {
-				border-top: 5px solid $color-gray;
-				transform: translateY(-60%) rotate(180deg);
-			}
-		}
-		&--down {
-			&::before {
-				border-top: 5px solid $color-gray;
-				transform: translateY(-60%) rotate(-90deg);
-			}
-        }
-        span{
-            @include font(14px, 500);
-            color: $color-black;
-        }
-        ul{
-            position: absolute;
-            bottom: 25px;
-            left: 0;
-            z-index: 1;
-            @include flex-center();
-            flex-direction: column;
-            background-color: $color-white;
-            box-shadow:0 0 5px 0 rgba($color: #000000, $alpha: .5);
-            border-radius: 4px;
-            padding: 5px 10px;
-          
-        }
-       
-		
-        li{
-            margin-top: 8px;
-        }
-    }
-    &__row{
-        padding: 10px 0 0 0;
-        align-items: center;
-    }
-}
-.column{
-    &__row{
-        display: flex;
-        justify-content: space-between;
-    }
-    &__title{
-        @include font(16px, 500);
-        color: $color-black;
-    }
-    &__subtitle{
-        @include font(12px, 400);
-        color: $color-gray;
-        margin-left: 15px;
 
-    }
-}
+
 
 @media screen and(max-width:1600px){
     .top-card {
@@ -160,7 +43,7 @@
             width: 100%;
         }
         .col-3 .dashboard__column{
-            width: 33.3%;
+            width: 50%;
         }
         
 
