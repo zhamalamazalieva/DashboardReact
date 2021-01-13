@@ -1,17 +1,24 @@
 import React from 'react';
 import UsersProfile from './userProfile';
+import Header from './header';
+import BasicProfile from './basicProfile';
 import "./style.scss";
 
 const Profile = () => {
     return (
     <section className="profile">
         <div className="section-container">
-            <div className="col-4">
-                <UsersProfile/>
+            <Header/>
+            <div className="row profile__margin">
+                <div className="col-5 profile__item">
+                    <UsersProfile/>
+                </div>
+                <div className="col-7 profile__item">
+                    <BasicProfile/>
+                </div>
             </div>
-            <div className="col-6">
-
-            </div>
+           
+           
         </div>
     </section>
     )
