@@ -1,0 +1,47 @@
+@import '../../index.scss';
+.profile{
+    margin-top: 60px;
+}
+.users-profile{
+    flex-direction: column;
+    border-radius: 4px;
+    background-color: $color-white;
+    box-shadow: 0 1px 3px 0 rgba(63, 63, 68, 0.5);
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        padding: 24px;
+    }
+    &__img{
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+        img{
+            border-radius: 13px;
+        }
+    }
+    &__name{
+        @include font(24px, 500);
+        color: $color-black;
+        margin-bottom: 10px;
+    }
+    &__country, &__time{
+        @include font(14px);
+        color: $color-gray;
+    }
+    &__bottom{
+        border-top: 1px solid $color-lightGray;
+        padding: 22px 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__settings{
+        @include font (12px, 500);
+        color: $color-black;
+        text-transform: uppercase;
+        transition: 0.4s;
+        &:hover{
+            color: $color-blue;
+        }
+    }
+}

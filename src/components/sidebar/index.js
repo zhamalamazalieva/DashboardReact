@@ -1,15 +1,12 @@
-import userImg from "../../assets/image/jpg/avatar.jpg";
 import Support from "../../assets/image/svg/support.svg";
 import Nav from "./nav.jsx";
+import Avatar from './avatar';
+import {Link} from 'react-router-dom';
 import "./style.scss";
 const Sidebar = () => {
     return (
         <aside className="sidebar">
-        <div className="sidebar__top">
-            <img className="sidebar__avatar" src={userImg} alt="avatar" />
-            <h3 className="sidebar__user">Will Smith</h3>
-            <span className="sidebar__position">Brain Director</span>
-        </div>
+            <Avatar/>
         <div className="sidebar__middle">
             <Nav />
         </div>

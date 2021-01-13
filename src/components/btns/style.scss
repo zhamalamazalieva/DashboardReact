@@ -74,6 +74,16 @@
         }
     }
 }
+.btn-add-order{
+    color: $color-btn;
+    @include font (16px, 500);
+    text-transform: uppercase;
+    @include flex-center();
+    background-color: transparent;
+    border: 2px solid rgba($color: $color-btn, $alpha: .1);
+    box-shadow: none;
+
+}
 .btn-submit{
     width: 100%;
     @include font (16px, 500);

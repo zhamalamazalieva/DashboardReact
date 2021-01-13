@@ -8,6 +8,15 @@
   padding: 24px;
   margin-bottom: 100px;
   height: 545px;
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  &__header--left{
+    display: flex;
+    align-items: center;
+  }
   .order {
     &__row {
       display: flex;
