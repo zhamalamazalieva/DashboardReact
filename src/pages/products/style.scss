@@ -187,6 +187,7 @@
         padding: 2px 4px;
         color: $color-gray;
         white-space: nowrap;
+        z-index: 1;
       }
       input:focus + span {
         opacity: 1;

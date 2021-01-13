@@ -81,7 +81,6 @@ const Modal = ({ setActiveModal, activeModal, setUserData, userData }) => {
             onSubmit={(event) => handleSubmit(event)}
           >
             <label>
-              <span className="form__text">Name</span>
               <input
                 required
                 onChange={(event) => SaveData(event)}
@@ -90,9 +89,9 @@ const Modal = ({ setActiveModal, activeModal, setUserData, userData }) => {
                 className="form__input"
                 placeholder="Name"
               />
+            <span className="form__text">Name</span>
             </label>
             <label>
-              <span className="form__text">ID Number</span>
               <input
                 required
                 onChange={(event) => SaveData(event)}
@@ -101,9 +100,9 @@ const Modal = ({ setActiveModal, activeModal, setUserData, userData }) => {
                 className="form__input"
                 placeholder="ID Number"
               />
+              <span className="form__text">ID Number</span>
             </label>
             <label>
-              <span className="form__text">Phone Number</span>
               <input
                 required
                 onChange={(event) => SaveData(event)}
@@ -112,9 +111,9 @@ const Modal = ({ setActiveModal, activeModal, setUserData, userData }) => {
                 className="form__input"
                 placeholder="Phone Number"
               />
+            <span className="form__text">Phone Number</span>
             </label>
             <label>
-              <span className="form__text">Email</span>
               <input
                 required
                 onChange={(event) => SaveData(event)}
@@ -123,9 +122,9 @@ const Modal = ({ setActiveModal, activeModal, setUserData, userData }) => {
                 className="form__input"
                 placeholder="Email"
               />
+              <span className="form__text">Email</span>
             </label>
             <label>
-              <span className="form__text">Profile Picture</span>
               <input
                 required
                 onChange={(event) => SaveData(event)}
@@ -133,6 +132,7 @@ const Modal = ({ setActiveModal, activeModal, setUserData, userData }) => {
                 className="form__input"
                 placeholder="Profile Picture"
               />
+              <span className="form__text">Profile Picture</span>
             </label>
             <BtnAddUser/>
           </form>

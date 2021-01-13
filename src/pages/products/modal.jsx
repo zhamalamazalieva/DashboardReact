@@ -68,8 +68,7 @@ const Modal = ({ setActiveModal, activeModal, setProduct, product }) => {
             className="manage__form form"
             onSubmit={(event) => handleSubmit(event)}
           >
-            <label>
-              <span className="form__text">Product Name</span>
+            <label>             
               <input
                 required
                 onChange={(event) => SaveData(event)}
@@ -78,9 +77,9 @@ const Modal = ({ setActiveModal, activeModal, setProduct, product }) => {
                 className="form__input"
                 placeholder="Type Product Name"
               />
+               <span className="form__text">Product Name</span>
             </label>
             <label>
-              <span className="form__text">Product Logo</span>
               <input
                 required
                 onChange={(event) => SaveData(event)}
@@ -89,9 +88,11 @@ const Modal = ({ setActiveModal, activeModal, setProduct, product }) => {
                 className="form__input"
                 placeholder="Type The Url to Image"
               />
+              <span className="form__text">Product Logo</span>
+
             </label>
             <label>
-              <span className="form__text">Phone Description</span>
+              
               <input
                 required
                 onChange={(event) => SaveData(event)}
@@ -100,9 +101,10 @@ const Modal = ({ setActiveModal, activeModal, setProduct, product }) => {
                 className="form__input"
                 placeholder="Type Product Description"
               />
+              <span className="form__text">Phone Description</span>
             </label>
             <label>
-              <span className="form__text">downloads</span>
+              
               <input
                 required
                 onChange={(event) => SaveData(event)}
@@ -111,6 +113,7 @@ const Modal = ({ setActiveModal, activeModal, setProduct, product }) => {
                 className="form__input"
                 placeholder="Type Downloads"
               />
+              <span className="form__text">Downloads</span>
             </label>
             <BtnAddProduct/>
           </form>
