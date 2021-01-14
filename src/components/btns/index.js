@@ -50,3 +50,8 @@ export const BtnAddOrder = () => {
         <button className="btn btn-add-order">new entry</button>
     )
 }
+export const BtnSaveSettings = () => {
+    return(
+        <button className="btn btn-settings">save settings</button>
+    )
+}

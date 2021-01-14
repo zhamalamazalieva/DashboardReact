@@ -92,3 +92,11 @@
     text-transform: uppercase;
     @include flex-center();
 }
+.btn-settings{
+    padding: 12px 17px;
+    @include font (14px, 500);
+    color: $color-white;
+    background-color: $color-blue;
+    text-transform: uppercase;
+    @include flex-center();
+}

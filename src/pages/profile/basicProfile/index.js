@@ -1,5 +1,5 @@
 import React from "react";
-import { BtnGoBack, BtnAddUser } from "../../../components/btns";
+import { BtnGoBack, BtnAddUser, BtnSaveSettings } from "../../../components/btns";
 const BasicProfile = () => {
   return (
     <div className="profile__basic">
@@ -12,14 +12,14 @@ const BasicProfile = () => {
           </div>
           <div className="form__middle row">
             <div className="col-6 form__item">
-            <label className="form__label">
+            <label>
           <input
             required
             type="text"
             className="form__input"
-            placeholder="Name"
+            placeholder="First Name"
           />
-          <span className="form__text">Name</span>
+          <span className="form__text">First Name</span>
         </label>
             <label>
             <input
@@ -69,7 +69,7 @@ const BasicProfile = () => {
             </div>
           </div>
           <div className="form__footer">
-          <BtnAddUser />
+          <BtnSaveSettings />
           </div>
       </form>
     </div>

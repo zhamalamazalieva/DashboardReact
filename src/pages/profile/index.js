@@ -17,8 +17,6 @@ const Profile = () => {
                     <BasicProfile/>
                 </div>
             </div>
-           
-           
         </div>
     </section>
     )
